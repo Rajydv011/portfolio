@@ -461,3 +461,28 @@ function toggleIntroSound() {
     }
   }
 }
+// ================= EDUCATION JOURNEY MODAL LOGIC =================
+function openEducationJourney(e) {
+  if (e) e.preventDefault();
+  const modal = document.getElementById('education-journey-modal');
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Page background scroll disable
+  }
+}
+
+function closeEducationJourney() {
+  const modal = document.getElementById('education-journey-modal');
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Page background scroll enable
+  }
+}
+
+// Background click close handler
+window.addEventListener('click', function(e) {
+  const modal = document.getElementById('education-journey-modal');
+  if (e.target === modal) {
+    closeEducationJourney();
+  }
+});
