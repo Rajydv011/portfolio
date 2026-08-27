@@ -406,3 +406,39 @@ if (nameContainer) {
     });
   });
 }
+// Circular Arrangement and Interactive Font Effect for DURGESH
+const nameContainer = document.getElementById('interactive-name');
+if (nameContainer) {
+  const letters = nameContainer.querySelectorAll('.letter');
+  const totalLetters = letters.length;
+  
+  // Har letter ko circle me angle ke hisab se baithana
+  letters.forEach((letter, index) => {
+    const angle = (index / totalLetters) * 360;
+    letter.style.transform = `rotate(${angle}deg) translate(0, -120px) rotate(-${angle}deg)`;
+    
+    // Store original angle for tracking
+    letter.dataset.angle = angle;
+  });
+
+  // Cursor move hone par weight / glow effect
+  document.addEventListener('mousemove', (e) => {
+    letters.forEach(letter => {
+      const rect = letter.getBoundingClientRect();
+      const letterCenterX = rect.left + rect.width / 2;
+      const letterCenterY = rect.top + rect.height / 2;
+
+      const distanceX = e.clientX - letterCenterX;
+      const distanceY = e.clientY - letterCenterY;
+      const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+      if (distance < 120) {
+        letter.style.color = '#00f0ff';
+        letter.style.textShadow = '0 0 15px rgba(0, 240, 255, 0.8)';
+      } else {
+        letter.style.color = '#ffffff';
+        letter.style.textShadow = 'none';
+      }
+    });
+  });
+}
