@@ -118,3 +118,31 @@ function handleResume3DTilt(e) {
   const yAxis = (window.innerHeight / 2 - e.pageY) / -35;
   card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 }
+// ================= 3D RESUME MODAL CONTROLS =================
+window.openResumeModal = function() {
+  const modal = document.getElementById('resumeModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('mousemove', handleResume3DTilt);
+  }
+};
+
+window.closeResumeModal = function(event) {
+  const modal = document.getElementById('resumeModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    window.removeEventListener('mousemove', handleResume3DTilt);
+    const card = document.getElementById('resumeCard');
+    if (card) card.style.transform = 'none';
+  }
+};
+
+function handleResume3DTilt(e) {
+  const card = document.getElementById('resumeCard');
+  if (!card) return;
+  const xAxis = (window.innerWidth / 2 - e.pageX) / 40;
+  const yAxis = (window.innerHeight / 2 - e.pageY) / -40;
+  card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+}
