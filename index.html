@@ -101,6 +101,7 @@
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+
             <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -112,67 +113,65 @@
         </div>
     </nav>
 
-    <!-- Modern Dark Hero Section -->
-    <section id="home" class="modern-hero">
-        <div class="hero-left-content">
-            <div class="role-badge">
-                Developer<span class="badge-cursor"></span>
-            </div>
-            
-            <h3 class="hero-greeting">Hello, I'm</h3>
-            
-            <h1 class="giant-name" id="interactive-name">
-                <span>D</span><span>U</span><span>R</span><span>G</span><span>E</span><span>S</span><span>H</span>&nbsp;<span>Y</span><span>A</span><span>D</span><span>A</span><span>V</span>
-            </h1>
+   <section id="home" class="hero-stage">
+  <div class="hero-top-badge">
+    <span class="dot">●</span> SHIPPING IDEAS INTO REALITY
+  </div>
 
-            <p class="hero-description">
-                Turning vision into reality through elegant code. I specialize in building softwares that inspire and leave a lasting impression.
-            </p>
+  <div class="kinetic-brand-container">
+    <div class="kinetic-text-row">
+      <span class="v-char">D</span>
+      <span class="v-char">U</span>
+      <span class="v-char">R</span>
+      <span class="v-char">G</span>
+      <span class="v-char">E</span>
+      <span class="v-char">S</span>
+      <span class="v-char">H</span>
+    </div>
+    <div class="center-floating-pill">
+      CRAFTING EXPERIENCES THAT PEOPLE REMEMBER
+    </div>
+  </div>
 
-            <div class="hero-btn-group">
-                <a href="#projects" class="btn-primary">View My Work</a>
-                <a href="javascript:void(0)" class="btn-secondary" onclick="openResumeModal()">My Resume</a>
-            </div>
+  <div class="hero-footer-content">
+    <p class="hero-desc">
+      Full-Stack Developer & Software Builder<br>
+      <span>Engineering fast, immersive, and motion-driven digital products.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#about" class="btn-cyan-pill">Know More &rarr;</a>
+      <a href="#contact" class="btn-dark-pill">Let's Talk &rarr;</a>
+    </div>
+  </div>
+</section>
 
-           <div class="hero-social-links">
-                <!-- GitHub -->
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-circle" title="GitHub">
-                    <i class="fa-brands fa-github"></i>
-                </a>
+<section id="about" class="about-split-stage">
+  <div class="about-split-container">
+    <div class="about-left-col">
+      <span class="section-chip">ABOUT ME</span>
+      <h2 class="about-title">Engineering The Future With Code & AI</h2>
+      <div class="about-text-wrap">
+        <p>Hello! I'm <strong>Durgesh Yadav</strong>, a dedicated Computer Science Engineering student and developer passionate about building modern web architectures.</p>
+        <p>I combine solid backend engineering with responsive 3D animations and AI automations to create intuitive digital experiences.</p>
+      </div>
+      <div class="about-stats-grid">
+        <div class="stat-card"><h3>B.Tech</h3><p>CSE (Pursuing)</p></div>
+        <div class="stat-card"><h3>MPEC</h3><p>Kanpur</p></div>
+        <div class="stat-card"><h3>100%</h3><p>Dedication</p></div>
+      </div>
+    </div>
 
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/raj-yadav-4729a2361?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="social-circle" title="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-
-                <!-- X (Twitter) -->
-                <a href="https://x.com/DurgeshhMr79822" target="_blank" rel="noopener noreferrer" class="social-circle" title="X (Twitter)">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-            </div>
-            </div>
-        </div>
-
-        <div class="hero-right-visual">
-            <div class="visual-glow-backdrop"></div>
-            <!-- Photo/3D Avatar Container -->
-            <div class="hero-right-visual">
-            <div class="visual-glow-backdrop"></div>
-            <div class="visual-frame">
-                <!-- Live Talking Anime Video -->
-                <video id="hero-avatar-video" autoplay loop muted playsinline class="character-video">
-                    <source src="raj.mp4" type="video/mp4">
-                </video>
-
-                <!-- Video Voice Control Button -->
-                <button class="video-audio-btn" id="audioToggleBtn" onclick="toggleIntroVoice()">
-                    <i class="fa-solid fa-volume-xmark" id="audioIcon"></i>
-                    <span>Unmute Intro</span>
-                </button>
-            </div>
-        </div>
-        </div>
-    </section>
+    <div class="about-right-col">
+      <div class="video-cyber-box">
+        <div class="video-badge-top"><span class="pulse-dot"></span> AI STREAM INTRO</div>
+        <button id="videoSoundBtn" onclick="toggleIntroSound()" class="video-sound-btn">
+          <i class="fa-solid fa-volume-xmark" id="soundIcon"></i> <span id="soundText">Unmute</span>
+        </button>
+        <video id="introAiVideo" class="intro-media-tag" src="raj.mp4" autoplay loop muted playsinline></video>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Projects Section -->
     <section id="projects" class="section">
