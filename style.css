@@ -747,3 +747,12 @@ header {
   box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
   border-color: #00f0ff;
 }
+.x-svg-icon {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.hero-social-btn:hover .x-svg-icon {
+  fill: #040710;
+}
