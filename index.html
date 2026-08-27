@@ -231,18 +231,24 @@
       </div>
     </div>
 
-    <div class="about-video-wrapper">
-      <div class="video-cyber-frame">
-        <div class="video-status-tag">
-          <span class="pulse-dot"></span> AI ASSISTANT / INTRO
-        </div>
-    <video class="ai-intro-video" src="raj.mp4" autoplay loop muted playsinline></video>
-        
-        <div class="video-glass-overlay">
-          <span>AI INTRO INTERACTIVE STREAM</span>
-        </div>
-      </div>
+   <div class="about-video-wrapper">
+  <div class="video-cyber-frame">
+    <div class="video-status-tag">
+      <span class="pulse-dot"></span> AI ASSISTANT / INTRO
     </div>
+
+    <!-- Sound Toggle Button -->
+    <button id="videoSoundBtn" onclick="toggleIntroSound()" style="position: absolute; top: 15px; right: 15px; z-index: 10; background: rgba(0, 240, 255, 0.2); border: 1px solid #00f0ff; color: #fff; padding: 6px 12px; border-radius: 14px; font-size: 11px; cursor: pointer; backdrop-filter: blur(8px); display: flex; align-items: center; gap: 6px;">
+      <i class="fa-solid fa-volume-xmark" id="soundIcon"></i> <span id="soundText">Unmute Voice</span>
+    </button>
+    
+    <video id="introAiVideo" class="ai-intro-video" src="raj.mp4" autoplay loop muted playsinline preload="auto"></video>
+    
+    <div class="video-glass-overlay">
+      <spa>THE ENGAGING INTRO!!</span></span>
+    </div>
+  </div>
+</div>
 
   </div>
 </section>

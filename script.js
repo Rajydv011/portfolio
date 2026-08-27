@@ -441,3 +441,23 @@ if (kineticChars.length > 0) {
     });
   });
 }
+// Toggle Sound for AI Intro Video
+function toggleIntroSound() {
+  const vid = document.getElementById('introAiVideo');
+  const icon = document.getElementById('soundIcon');
+  const text = document.getElementById('soundText');
+
+  if (vid) {
+    if (vid.muted) {
+      vid.muted = false;
+      vid.volume = 1.0;
+      vid.play();
+      if (icon) icon.className = 'fa-solid fa-volume-high';
+      if (text) text.innerText = 'Mute';
+    } else {
+      vid.muted = true;
+      if (icon) icon.className = 'fa-solid fa-volume-xmark';
+      if (text) text.innerText = 'Unmute Voice';
+    }
+  }
+}
