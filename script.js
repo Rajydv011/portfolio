@@ -90,3 +90,31 @@ function closeIDCardModal(event) {
     if (card) card.style.transform = 'none';
   }
 }
+// ================= 3D RESUME MODAL & TILT PHYSICS =================
+function openResumeModal() {
+  const modal = document.getElementById('resumeModal');
+  if (modal) {
+    modal.classList.add('active');
+    window.addEventListener('mousemove', handleResume3DTilt);
+  }
+}
+
+function closeResumeModal(event) {
+  const modal = document.getElementById('resumeModal');
+  if (modal) {
+    modal.classList.remove('active');
+    window.removeEventListener('mousemove', handleResume3DTilt);
+    const card = document.getElementById('resumeCard');
+    if (card) card.style.transform = 'none';
+  }
+}
+
+function handleResume3DTilt(e) {
+  const card = document.getElementById('resumeCard');
+  if (!card) return;
+  
+  // Real-time 3D Perspective Tilt with cursor coordinates
+  const xAxis = (window.innerWidth / 2 - e.pageX) / 35;
+  const yAxis = (window.innerHeight / 2 - e.pageY) / -35;
+  card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+}
