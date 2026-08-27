@@ -373,3 +373,36 @@ window.toggleHangingID = function() {
         }
     }
 };
+// Cursor Proximity Font Weight Effect for "DURGESH"
+const nameContainer = document.getElementById('interactive-name');
+if (nameContainer) {
+  const letters = nameContainer.querySelectorAll('.letter');
+
+  document.addEventListener('mousemove', (e) => {
+    letters.forEach(letter => {
+      const rect = letter.getBoundingClientRect();
+      const letterCenterX = rect.left + rect.width / 2;
+      const letterCenterY = rect.top + rect.height / 2;
+
+      // Distance calculate karo cursor aur letter ke beech ka
+      const distanceX = e.clientX - letterCenterX;
+      const distanceY = e.clientY - letterCenterY;
+      const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+      // Agar cursor paas hai (radius 180px), toh weight badhao
+      if (distance < 180) {
+        const weight = Math.max(100, Math.min(900, 900 - (distance * 4.5)));
+        const scale = Math.max(1, Math.min(1.15, 1.15 - (distance / 1200)));
+        
+        letter.style.fontWeight = Math.round(weight);
+        letter.style.transform = `scale(${scale}) translateY(-${(180 - distance) / 15}px)`;
+        letter.style.color = '#00f0ff';
+      } else {
+        // Door jaane par normal kar do
+        letter.style.fontWeight = '100';
+        letter.style.transform = 'scale(1) translateY(0px)';
+        letter.style.color = '#ffffff';
+      }
+    });
+  });
+}

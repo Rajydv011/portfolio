@@ -1971,3 +1971,26 @@ body {
         0 3px 0 #0369a1,
         0 8px 20px rgba(56, 189, 248, 0.5);
 }
+/* Interactive Variable Typography Effect */
+#interactive-name {
+  display: flex;
+  gap: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 72px;
+  font-weight: 100; /* Starting thin weight */
+  cursor: default;
+}
+
+#interactive-name .letter {
+  display: inline-block;
+  transition: font-weight 0.15s ease, transform 0.15s ease, color 0.15s ease;
+  will-change: font-weight, transform;
+  color: #ffffff;
+}
+
+#interactive-name .letter:hover {
+  font-weight: 900; /* Super bold on direct hover */
+  transform: translateY(-8px) scale(1.05);
+  color: #00f0ff;
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+}
