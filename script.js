@@ -406,83 +406,22 @@ if (nameContainer) {
     });
   });
 }
-// Variable Typography Weight Tracking for "DURGESH"
-const kineticChars = document.querySelectorAll('.kinetic-char');
-
-if (kineticChars.length > 0) {
-  window.addEventListener('mousemove', (e) => {
-    kineticChars.forEach((char) => {
-      const rect = char.getBoundingClientRect();
-      const charCenterX = rect.left + rect.width / 2;
-      const charCenterY = rect.top + rect.height / 2;
-
-      // Distance calculation
-      const dist = Math.hypot(e.clientX - charCenterX, e.clientY - charCenterY);
-      const maxDistance = 240; // Effect radius in px
-
-      if (dist < maxDistance) {
-        // Normalizes distance: 0 (closest) to 1 (far away)
-        const intensity = 1 - dist / maxDistance;
-        
-        // Dynamic weight: 200 (ultra thin) to 900 (ultra bold)
-        const targetWeight = Math.round(200 + intensity * 700);
-        const scale = (1 + intensity * 0.12).toFixed(2);
-        
-        char.style.fontWeight = targetWeight;
-        char.style.transform = `scale(${scale}) translateY(-${intensity * 6}px)`;
-        char.style.color = intensity > 0.6 ? '#ffffff' : '#e2e8f0';
-        char.style.textShadow = intensity > 0.5 ? '0 0 25px rgba(0, 240, 255, 0.4)' : 'none';
-      } else {
-        char.style.fontWeight = '200';
-        char.style.transform = 'scale(1) translateY(0px)';
-        char.style.color = '#cbd5e1';
-        char.style.textShadow = 'none';
-      }
-    });
-  });
+// Journey Functions
+function openJourneyModal() {
+  const m = document.getElementById('education-journey-modal');
+  if (m) m.style.display = 'flex';
 }
-// Toggle Sound for AI Intro Video
-function toggleIntroSound() {
-  const vid = document.getElementById('introAiVideo');
-  const icon = document.getElementById('soundIcon');
-  const text = document.getElementById('soundText');
-
-  if (vid) {
-    if (vid.muted) {
-      vid.muted = false;
-      vid.volume = 1.0;
-      vid.play();
-      if (icon) icon.className = 'fa-solid fa-volume-high';
-      if (text) text.innerText = 'Mute';
-    } else {
-      vid.muted = true;
-      if (icon) icon.className = 'fa-solid fa-volume-xmark';
-      if (text) text.innerText = 'Unmute Voice';
-    }
-  }
-}
-// ================= EDUCATION JOURNEY MODAL LOGIC =================
-function openEducationJourney(e) {
-  if (e) e.preventDefault();
-  const modal = document.getElementById('education-journey-modal');
-  if (modal) {
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // Page background scroll disable
-  }
+function closeJourneyModal() {
+  const m = document.getElementById('education-journey-modal');
+  if (m) m.style.display = 'none';
 }
 
-function closeEducationJourney() {
-  const modal = document.getElementById('education-journey-modal');
-  if (modal) {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Page background scroll enable
-  }
+// ID Card Functions
+function openIDCardModal() {
+  const idM = document.getElementById('student-id-modal');
+  if (idM) idM.style.display = 'flex';
 }
-
-// Background click close handler
-window.addEventListener('click', function(e) {
-  const modal = document.getElementById('education-journey-modal');
-  if (e.target === modal) {
-    closeEducationJourney();
-  }
-});
+function closeIDCardModal() {
+  const idM = document.getElementById('student-id-modal');
+  if (idM) idM.style.display = 'none';
+}
