@@ -1,709 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Durgesh Yadav | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Durgesh Yadav | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@200;400;700;900&display=swap" rel="stylesheet">
 </head>
-<!-- Floating AI Female Assistant Widget -->
-    <div class="ai-assistant-wrapper">
-        <div class="ai-avatar-btn" id="ai-toggle-btn" title="Chat with AI Assistant">
-            <img src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Aria&eyes=happy" alt="AI Avatar" class="ai-avatar-img">
-            <span class="ai-online-dot"></span>
-            <div class="ai-speech-bubble">Hi! I'm Aria 👋 Chat with me!</div>
-        </div>
-
-        <div class="ai-chat-window hidden" id="ai-chat-window">
-            <div class="ai-chat-header">
-                <div class="ai-header-info">
-                    <img src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Aria&eyes=happy" alt="Aria" class="ai-mini-avatar">
-                    <div>
-                        <h4>Ariaa AI</h4>
-                        <span class="ai-status">Online Assistant</span>
-                    </div>
-                </div>
-                <button class="ai-close-btn" id="ai-close-btn">&times;</button>
-            </div>
-            <div class="ai-chat-messages" id="ai-chat-messages">
-                <div class="ai-msg bot-msg">Hello! Ask me anything about Durgesh's skills, projects, or contact info!</div>
-            </div>
-            <div class="ai-quick-chips">
-                <button onclick="sendQuickMessage('What are Durgesh\'s skills?')">💡 Skills</button>
-                <button onclick="sendQuickMessage('Show me his projects')">🚀 Projects</button>
-                <button onclick="sendQuickMessage('How can I contact him?')">📞 Contact</button>
-            </div>
-            <form class="ai-chat-input-area" id="ai-chat-form">
-                <input type="text" id="ai-user-input" placeholder="Type a message..." autocomplete="off" required>
-                <button type="submit" class="ai-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
-            </form>
-        </div>
-    </div>
 <body>
-    <!-- Background Canvas -->
-    <canvas id="bg-canvas"></canvas>
 
-   <!-- Navigation Bar with View ID Card Button -->
-   <!-- Navigation Bar with 4-Piece Shatter Animated Logo -->
+  <!-- 1. NAVBAR -->
+  <header>
     <nav class="navbar">
-        <a href="#home" class="brand-logo" title="Durgesh Yadav">
-            <div class="dy-shatter-logo">
-                <svg viewBox="0 0 120 120" class="dy-quad-svg">
-                    <defs>
-                        <!-- Emerald & Mint Glow Gradients -->
-                        <linearGradient id="dyEmeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#34d399" />
-                            <stop offset="100%" stop-color="#059669" />
-                        </linearGradient>
-                        <linearGradient id="dyCyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#38bdf8" />
-                            <stop offset="100%" stop-color="#0284c7" />
-                        </linearGradient>
-                    </defs>
-
-                    <!-- Quadrant 1: Top-Left (D top + shield) -->
-                    <g class="quad-part quad-tl">
-                        <polygon points="60,8 18,32 18,60 60,60" fill="#022c22" stroke="#10b981" stroke-width="2.5" opacity="0.8" />
-                        <!-- D Letter Top Half -->
-                        <path d="M 32 30 L 48 30 Q 58 30 58 45 L 48 45 Q 44 38 38 38 L 38 60 L 32 60 Z" fill="#ffffff" />
-                    </g>
-
-                    <!-- Quadrant 2: Top-Right (Y top wings + shield) -->
-                    <g class="quad-part quad-tr">
-                        <polygon points="60,8 102,32 102,60 60,60" fill="#032b30" stroke="#38bdf8" stroke-width="2.5" opacity="0.8" />
-                        <!-- Y Letter Top Wings -->
-                        <path d="M 64 30 L 73 45 L 82 30 L 90 30 L 78 50 L 78 60 L 72 60 L 72 50 L 60 30 Z" fill="#ffffff" />
-                    </g>
-
-                    <!-- Quadrant 3: Bottom-Left (D bottom + shield) -->
-                    <g class="quad-part quad-bl">
-                        <polygon points="18,60 18,88 60,112 60,60" fill="#032b30" stroke="#38bdf8" stroke-width="2.5" opacity="0.8" />
-                        <!-- D Letter Bottom Half -->
-                        <path d="M 32 60 L 38 60 L 38 82 Q 44 82 48 75 L 58 75 Q 58 90 48 90 L 32 90 Z" fill="#ffffff" />
-                    </g>
-
-                    <!-- Quadrant 4: Bottom-Right (Y lower stem + shield) -->
-                    <g class="quad-part quad-br">
-                        <polygon points="102,60 102,88 60,112 60,60" fill="#022c22" stroke="#10b981" stroke-width="2.5" opacity="0.8" />
-                        <!-- Y Letter Lower Stem -->
-                        <path d="M 72 60 L 78 60 L 78 90 L 72 90 Z" fill="#ffffff" />
-                    </g>
-
-                    <!-- Center Glowing Dot -->
-                    <circle class="core-tech-dot" cx="60" cy="60" r="3.5" fill="#38bdf8" />
-                </svg>
-            </div>
-            <span class="logo-text">PORTFOLIO!<span>.</span></span>
-        </a>
-<ul class="nav-links">
-  <li><a href="#home">Home</a></li>
-  <li><a href="#about">About</a></li>
-  <li><a href="javascript:void(0)" onclick="openJourneyModal()">Journey</a></li>
-  <li><a href="#projects">Projects</a></li>
-  <li><a href="#contact">Contact</a></li>
-</ul>
-
-<div class="nav-right-actions">
-  <button class="view-id-nav-btn" onclick="openIDCardModal()" style="background: rgba(0,240,255,0.15); border: 1px solid #00f0ff; color: #fff; padding: 8px 18px; border-radius: 20px; font-weight: bold; cursor: pointer;">
-    <i class="fa-solid fa-id-card"></i> View ID Card
-  </button>
-</div>
+      <div class="logo">PORTFOLIO<span>.</span></div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="javascript:void(0)" onclick="openJourneyModal()">Journey</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right-actions">
+        <button class="view-id-nav-btn" onclick="openIDCardModal()">
+          <i class="fa-solid fa-id-card"></i> View ID Card
+        </button>
+      </div>
     </nav>
+  </header>
 
-    <!-- Interactive Variable Kinetic Hero Section -->
-<section id="home" class="kinetic-hero-section">
-  <div class="kinetic-bg-glow"></div>
+  <!-- 2. KINETIC HERO SECTION -->
+  <section id="home" class="kinetic-hero-section">
+    <div class="kinetic-bg-glow"></div>
+    <div class="hero-top-tag"><span>●</span> SHIPPING IDEAS INTO REALITY</div>
 
-  <div class="hero-top-tag">
-    <span>●</span> SHIPPING IDEAS INTO REALITY
-  </div>
-
-  <!-- Giant Interactive Typography -->
-  <div class="kinetic-name-wrapper" id="kineticNameContainer">
-    <div class="kinetic-letters-row">
-      <span class="kinetic-char">D</span>
-      <span class="kinetic-char">U</span>
-      <span class="kinetic-char">R</span>
-      <span class="kinetic-char">G</span>
-      <span class="kinetic-char">E</span>
-      <span class="kinetic-char">S</span>
-      <span class="kinetic-char">H</span>
+    <div class="kinetic-name-wrapper" id="kineticNameContainer">
+      <div class="kinetic-letters-row">
+        <span class="kinetic-char">D</span>
+        <span class="kinetic-char">U</span>
+        <span class="kinetic-char">R</span>
+        <span class="kinetic-char">G</span>
+        <span class="kinetic-char">E</span>
+        <span class="kinetic-char">S</span>
+        <span class="kinetic-char">H</span>
+      </div>
+      <div class="kinetic-sub-pill">CRAFTING EXPERIENCES THAT PEOPLE REMEMBER</div>
     </div>
-    <div class="kinetic-sub-pill">
-      CRAFTING EXPERIENCES THAT PEOPLE REMEMBER
+
+    <div class="hero-bottom-actions">
+      <div class="hero-short-bio">
+        Full-Stack Developer & Software Builder<br>
+        <span>Engineering fast, immersive, and motion-driven digital products.</span>
+      </div>
+      <div class="hero-btn-group">
+        <a href="#projects" class="kinetic-btn-primary">Explore Work &rarr;</a>
+        <a href="#contact" class="kinetic-btn-outline">Let's Talk &rarr;</a>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Hero Bottom Bar -->
-  <div class="hero-bottom-actions">
-    <div class="hero-short-bio">
-      Full-Stack Developer & Software Builder<br>
-      <span>Engineering fast, immersive, and motion-driven digital products.</span>
-    </div>
-    <div class="hero-btn-group">
-      <a href="#projects" class="kinetic-btn-primary">Explore Work &rarr;</a>
-      <a href="#contact" class="kinetic-btn-outline">Let's Talk &rarr;</a>
-    </div>
-  </div>
-</section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <h2 class="section-title" data-aos="fade-up">Featured <span>Projects</span></h2>
-        <div class="projects-grid">
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-badge">Full Stack</div>
-                <h3>Clinic Management System</h3>
-                <p>Medical clinic portal with automated consultation tools and database management.</p>
-                <div class="tags">
-                    <span>HTML/CSS</span>
-                    <span>JavaScript</span>
-                    <span>Node.js</span>
-                </div>
-                <div class="card-links">
-                    <a href="#" class="link-btn">Live Demo</a>
-                    <a href="#" class="link-btn outline">GitHub</a>
-                </div>
-            </div>
-
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <div class="card-badge">Web App</div>
-                <h3>Interactive Animated Portfolio</h3>
-                <p>Modern dark-themed portfolio featuring real-time interactive motion canvas animations.</p>
-                <div class="tags">
-                    <span>JavaScript</span>
-                    <span>Canvas API</span>
-                    <span>CSS3</span>
-                </div>
-                <div class="card-links">
-                    <a href="#" class="link-btn">Live Demo</a>
-                    <a href="#" class="link-btn outline">GitHub</a>
-                </div>
-            </div>
-
-            <div class="card" data-aos="fade-up" data-aos-delay="300">
-                <div class="card-badge">Utility</div>
-                <h3>photo and video editing</h3>
-                <p>with use of AI and the basic application and websites</p>
-                <div class="tags">
-                    <span>Colour grading</span>
-                    <span>Logic Engine</span>
-                </div>
-                <div class="card-links">
-                    <a href="#" class="link-btn">Book demo</a>
-                    <a href="#" class="link-btn outline">ContactS</a>
-                </div>
-            </div>
+  <!-- 3. ABOUT SECTION -->
+  <section id="about" class="about-split-section">
+    <div class="about-container">
+      <div class="about-3d-box">
+        <span class="about-badge">ABOUT ME</span>
+        <h2 class="about-heading">Engineering The Future With Code & AI</h2>
+        <div class="about-text-content">
+          <p>Hello! I'm <strong>Durgesh Yadav</strong>, a passionate Computer Science Engineering student and Software Developer. I build robust, scalable digital architectures paired with responsive 3D interfaces.</p>
+          <p>My work combines clean code, rapid prototyping, and high-performance frontend engineering.</p>
         </div>
-    </section>
-
-   <section id="about" class="about-split-section">
-  <div class="about-container">
-    
-    <div class="about-3d-box">
         <div class="about-stats-row">
-        <div class="stat-item">
-          <h3>2+</h3>
-          <p>Years Coding</p>
+          <div class="stat-item"><h3>2+</h3><p>Years Coding</p></div>
+          <div class="stat-item"><h3>10+</h3><p>Projects Built</p></div>
+          <div class="stat-item"><h3>100%</h3><p>Dedication</p></div>
         </div>
-        <div class="stat-item">
-          <h3>10+</h3>
-          <p>Projects Built</p>
-        </div>
-        <div class="stat-item">
-          <h3>100%</h3>
-          <p>Passion & Dedication</p>
-        </div>
-      </div>
-      <span class="about-badge">ABOUT ME</span>
-      <h2 class="about-heading">Engineering The Future With Code & AI</h2>
-      
-      <div class="about-text-content">
-        <p>
-          Hello! I'm <strong>Durgesh Yadav</strong>, a passionate Computer Science Engineering student and Software Developer. I thrive at the intersection of high-performance backend systems, interactive 3D frontend interfaces, and artificial intelligence.
-        </p>
-        <p>
-          My goal is to craft digital experiences that are not only visually captivating but architecturally solid, lightning-fast, and user-centric. From building full-stack platforms to experimenting with intelligent bots, I turn ideas into deployable reality.
-        </p>
       </div>
 
-      <div class="about-stats-row">
-        <div class="stat-item">
-          <h3>2+</h3>
-          <p>Years Coding</p>
-        </div>
-        <div class="stat-item">
-          <h3>10+</h3>
-          <p>Projects Built</p>
-        </div>
-        <div class="stat-item">
-          <h3>100%</h3>
-          <p>Passion & Dedication</p>
+      <div class="about-video-wrapper">
+        <div class="video-cyber-frame">
+          <div class="video-status-tag"><span class="pulse-dot"></span> AI ASSISTANT / INTRO</div>
+          <button id="videoSoundBtn" onclick="toggleIntroSound()" class="video-sound-toggle">
+            <i class="fa-solid fa-volume-xmark" id="soundIcon"></i> <span id="soundText">Unmute</span>
+          </button>
+          <video id="introAiVideo" class="ai-intro-video" src="raj.mp4" autoplay loop muted playsinline></video>
+          <div class="video-glass-overlay"><span>AI INTRO INTERACTIVE STREAM</span></div>
         </div>
       </div>
     </div>
+  </section>
 
-   <div class="about-video-wrapper">
-  <div class="video-cyber-frame">
-    <div class="video-status-tag">
-      <span class="pulse-dot"></span> AI ASSISTANT / INTRO
+  <!-- 4. PROJECTS SECTION -->
+  <section id="projects" class="common-section">
+    <div class="section-head">
+      <span class="section-chip">PORTFOLIO</span>
+      <h2>Featured Projects</h2>
     </div>
-
-    <!-- Sound Toggle Button -->
-    <button id="videoSoundBtn" onclick="toggleIntroSound()" style="position: absolute; top: 15px; right: 15px; z-index: 10; background: rgba(0, 240, 255, 0.2); border: 1px solid #00f0ff; color: #fff; padding: 6px 12px; border-radius: 14px; font-size: 11px; cursor: pointer; backdrop-filter: blur(8px); display: flex; align-items: center; gap: 6px;">
-      <i class="fa-solid fa-volume-xmark" id="soundIcon"></i> <span id="soundText">Unmute Voice</span>
-    </button>
-    
-    <video id="introAiVideo" class="ai-intro-video" src="raj.mp4" autoplay loop muted playsinline preload="auto"></video>
-    
-    <div class="video-glass-overlay">
-      <spa>THE ENGAGING INTRO!!</span></span>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="proj-badge">Full Stack</div>
+        <h3>Clinic Management System</h3>
+        <p>A comprehensive digital automation suite for appointment scheduling, patient records, and prescription billing.</p>
+      </div>
+      <div class="project-card">
+        <div class="proj-badge">AI / Web</div>
+        <h3>Interactive 3D Portfolio</h3>
+        <p>Kinetic variable typography, custom particle physics, and responsive AI video streaming interface.</p>
+      </div>
+      <div class="project-card">
+        <div class="proj-badge">JavaScript</div>
+        <h3>Smart Analytics Dashboard</h3>
+        <p>Real-time data visualization platform with interactive analytics and responsive metric graphs.</p>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-  </div>
-</section>
+  <!-- 5. CONTACT SECTION -->
+  <section id="contact" class="common-section">
+    <div class="section-head">
+      <span class="section-chip">LET'S CONNECT</span>
+      <h2>Get In Touch</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info-card">
+        <h3>Direct Channels</h3>
+        <p>Feel free to reach out directly via WhatsApp, email, or social profiles.</p>
+        <div class="contact-row"><i class="fa-solid fa-envelope"></i><span>dy4991919@gmail.com</span></div>
+        <div class="contact-row"><i class="fa-brands fa-whatsapp"></i><span>+91 9369578796</span></div>
+        <div class="contact-row"><i class="fa-brands fa-instagram"></i><span>@durgeshh_02.5</span></div>
+      </div>
+      <div class="contact-form-box">
+        <input type="text" placeholder="Your Name" class="inp-box">
+        <input type="email" placeholder="Your Email" class="inp-box">
+        <textarea placeholder="Your Message" rows="4" class="inp-box"></textarea>
+        <button class="kinetic-btn-primary" style="width: 100%; border:none; cursor: pointer;">Send Message</button>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <h2 class="section-title" data-aos="fade-up">Get In <span>Touch</span></h2>
-        
-        <div class="contact-wrapper" data-aos="fade-up">
-            <div class="contact-info">
-                <h3 class="info-heading">Let's Connect</h3>
-                <p class="info-sub">Feel free to reach out directly via WhatsApp, email, or social profiles.</p>
-                
-                <div class="detail-list">
-                    <div class="detail-item">
-                        <div class="icon-box float-1"><i class="fa-solid fa-envelope"></i></div>
-                        <a href="mailto:dy4991919@gmail.com" class="detail-val">dy4991919@gmail.com</a>
-                    </div>
-                    <div class="detail-item">
-                        <div class="icon-box float-2"><i class="fa-brands fa-whatsapp"></i></div>
-                        <a href="https://wa.me/919369578796" target="_blank" class="detail-val">+91 9369578796</a>
-                    </div>
-                    <div class="detail-item">
-                        <div class="icon-box float-3"><i class="fa-brands fa-instagram"></i></div>
-                        <a href="https://instagram.com/durgeshh_02.5" target="_blank" class="detail-val">@durgeshh_02.5</a>
-                    </div>
-                    <div class="detail-item">
-                        <div class="icon-box float-4"><i class="fa-brands fa-linkedin-in"></i></div>
-                        <a href="https://linkedin.com" target="_blank" class="detail-val">linkedin/durgesh-yadav</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-box">
-                <form class="contact-form" action="https://formspree.io/f/xrpzwgve" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
+  <!-- 6. JOURNEY POPUP MODAL -->
+  <div id="education-journey-modal" class="fullscreen-popup-overlay">
+    <div class="popup-modal-container">
+      <button onclick="closeJourneyModal()" class="popup-close-btn">&times;</button>
+      <div style="text-align: center; margin-bottom: 25px;">
+        <span class="section-chip">ACADEMIC TIMELINE</span>
+        <h2 style="margin: 10px 0 0; font-size: 24px; color: #fff;">My Educational Journey</h2>
+      </div>
+      <div class="journey-cards-grid">
+        <div class="journey-item-card">
+          <span class="card-year">2023 • 86% SCORE</span>
+          <h3>High School (10th)</h3>
+          <h4>H.R.A Inter College, Utraula, Balrampur</h4>
+          <p>Completed 10th standard with 86%, developing sharp analytical problem-solving skills.</p>
         </div>
-    </section>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-    <!-- Digital Interactive Resume Modal -->
-    <div class="resume-modal-overlay" id="resumeModalOverlay" onclick="closeResumeModal()">
-        <div class="resume-modal-container" onclick="event.stopPropagation()">
-            
-            <!-- Modal Header / Actions -->
-            <div class="resume-actions-bar">
-                <button class="resume-action-btn print-btn" onclick="window.print()">
-                    <i class="fa-solid fa-print"></i> Print / Save PDF
-                </button>
-                <button class="resume-close-icon" onclick="closeResumeModal()">&times;</button>
-            </div>
-
-            <!-- Resume Sheet -->
-            <div class="resume-paper">
-                <!-- Header -->
-                <div class="res-header">
-                    <h1 class="res-name">DURGESH YADAV</h1>
-                    <div class="res-contact-info">
-                        <span><i class="fa-solid fa-location-dot"></i> GANDHI CHOWK RAIPUR 492001 (C.G.)</span>
-                        <span><i class="fa-solid fa-phone"></i> +91 9369578796</span>
-                        <span><i class="fa-solid fa-envelope"></i> dy4991919@gmail.com</span>
-                    </div>
-                </div>
-
-                <hr class="res-divider">
-
-                <!-- Objective -->
-                <div class="res-section">
-                    <h3 class="res-heading">Career Objective</h3>
-                    <p class="res-text">
-                        Want To Achieve High Career Growth With Continuous Learning And Attach With a Growth-Oriented Organization By Contributing My Skills. Looking forward to leveraging my technical and analytical skills in roles like Software Developer, Tech Support or Data Entry Operations.
-                    </p>
-                </div>
-
-                <!-- Education Table -->
-                <div class="res-section">
-                    <h3 class="res-heading">Educational Background</h3>
-                    <table class="res-table">
-                        <thead>
-                            <tr>
-                                <th>S.No.</th>
-                                <th>Course</th>
-                                <th>Board / University</th>
-                                <th>Year</th>
-                                <th>Percent / Grade</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1.</td>
-                                <td>10<sup>th</sup></td>
-                                <td>UP Board</td>
-                                <td>2023</td>
-                                <td>86%</td>
-                            </tr>
-                            <tr>
-                                <td>2.</td>
-                                <td>12<sup>th</sup></td>
-                                <td>UP Board</td>
-                                <td>2025</td>
-                                <td>65.5%</td>
-                            </tr>
-                            <tr>
-                                <td>3.</td>
-                                <td>B. Tech (CSE)</td>
-                                <td>Maharana Pratap Engineering College, Kanpur</td>
-                                <td>(Expected) 2029</td>
-                                <td>7 YGPA</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Technical Skills -->
-                <div class="res-section">
-                    <h3 class="res-heading">Professional & Technical Skills</h3>
-                    <ul class="res-list">
-                        <li><strong>Programming Languages:</strong> C, C++</li>
-                        <li><strong>Computer Applications:</strong> MS Excel, MS Word, Data Entry Operations</li>
-                        <li><strong>Core Competencies:</strong> Basic Computer Knowledge, Technical Troubleshooting</li>
-                    </ul>
-                </div>
-
-                <!-- Job & Experience Profile -->
-                <div class="res-section">
-                    <h3 class="res-heading">Job & Experience Profile</h3>
-                    <p class="res-text"><strong>Status:</strong> Fresher</p>
-                    <p class="res-text">Enthusiastic Engineering Student ready to apply Academic Knowledge, Programming logic and Data Management Skills in a Practical Environment.</p>
-                </div>
-
-                <!-- Strengths -->
-                <div class="res-section">
-                    <h3 class="res-heading">Strengths</h3>
-                    <ul class="res-list">
-                        <li>Excellent Team Coordination & Communication Skills</li>
-                        <li>Strong Problem-Solving Abilities</li>
-                        <li>Excellent Organizational & Time Management Skills</li>
-                        <li>Ability to perform Daily Administrative Operations & Duties</li>
-                    </ul>
-                </div>
-
-                <!-- Personal Details -->
-                <div class="res-section">
-                    <h3 class="res-heading">Personal Details</h3>
-                    <div class="res-personal-grid">
-                        <div><strong>Father's Name:</strong> Mr. Rajman Yadav</div>
-                        <div><strong>Date of Birth:</strong> 15/08/2005</div>
-                        <div><strong>Gender:</strong> Male</div>
-                        <div><strong>Religion:</strong> Hindu</div>
-                        <div><strong>Marital Status:</strong> Unmarried</div>
-                        <div><strong>Nationality:</strong> Indian</div>
-                        <div><strong>Languages Known:</strong> Hindi & English</div>
-                    </div>
-                </div>
-
-                <!-- Declaration -->
-                <div class="res-section res-declaration">
-                    <p>I hereby declare that the above information is true to the best of my knowledge.</p>
-                    <div class="res-sign-row">
-                        <div>
-                            <p><strong>Place:</strong> RAIPUR</p>
-                        </div>
-                        <div class="res-sign">
-                            <p><strong>(DURGESH YADAV)</strong></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <div class="journey-item-card">
+          <span class="card-year">2025 • 65.5% SCORE</span>
+          <h3>Intermediate (12th)</h3>
+          <h4>H.R.A Inter College, Utraula, Balrampur</h4>
+          <p>Completed 12th standard with 65.5%, specializing in Mathematics and Physical Sciences.</p>
         </div>
-    </div>
-    <!-- Real Lanyard & 3D Rotating ID Card -->
-    <div class="hanging-id-overlay" id="hangingIdOverlay" onclick="toggleHangingID()">
-        <button class="id-modal-close" onclick="toggleHangingID()">&times;</button>
-        
-        <div class="lanyard-and-card-wrap" onclick="event.stopPropagation()">
-            
-            <!-- Real MPGI Blue Ribbon / Lanyard Strap -->
-            <div class="mpgi-ribbon-strap">
-                <div class="ribbon-text-left">MAHARANA PRATAP GROUP OF INSTITUTIONS KANPUR</div>
-                <div class="ribbon-metal-clip"></div>
-            </div>
-
-            <!-- 3D Flippable Card Container -->
-            <div class="id-card-3d-wrapper">
-                <div class="id-card-inner">
-                    
-                    <!-- FRONT SIDE OF ID CARD -->
-                    <div class="id-card-face id-card-front">
-                        <div class="card-slot-hole"></div>
-                        
-                        <div class="mpgi-card-header">
-                            <div class="mpgi-logo-title">
-                                <span class="mpgi-bold">MPGI</span>
-                                <small>A blend of fine education</small>
-                            </div>
-                            <h3>MAHARANA PRATAP ENGINEERING COLLEGE</h3>
-                            <p class="college-sub">KOTHI, MANDHANA, KANPUR</p>
-                            <p class="affil-text">Affiliated to Dr. A.P.J.A.K.T.U., Lucknow & Approved By AICTE</p>
-                        </div>
-
-                        <!-- User Photo Frame -->
-                        <div class="student-photo-frame">
-                            <img src="raj.jpg" alt="Durgesh Yadav" class="student-img">
-                        </div>
-
-                        <div class="student-primary-info">
-                            <h2 class="student-name">DURGESH YADAV</h2>
-                            <p class="student-branch">B. Tech. - CSE (AI)</p>
-                            
-                            <div class="status-strip strip-orange">Valid Upto 2029</div>
-                            <div class="status-strip strip-yellow">Day Scholar</div>
-                            <div class="status-strip strip-purple">Admission Year : 2025</div>
-                        </div>
-
-                        <div class="card-footer-grid">
-                            <div class="library-id-box">
-                                <span>Library ID</span>
-                                <strong>25CS224</strong>
-                            </div>
-                            <div class="qr-code-box">
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=MPGI-DURGESH-25CS224" alt="QR Code">
-                            </div>
-                            <div class="director-sign-box">
-                                <div class="sign-art">Director</div>
-                            </div>
-                        </div>
-
-                        <div class="website-bottom-tag">mpgi.edu.in</div>
-                    </div>
-
-                    <!-- BACK SIDE OF ID CARD -->
-                    <div class="id-card-face id-card-back">
-                        <div class="card-slot-hole"></div>
-                        
-                        <div class="back-yellow-curve"></div>
-
-                        <div class="back-details-list">
-                            <div class="detail-row"><span>Student DoB</span> <span>: 15-08-2008,</span></div>
-                            <div class="detail-row"><span>Blood Group</span> <span>: B+</span></div>
-                            <div class="detail-row"><span>Mobile</span> <span>: 9369578796</span></div>
-                            
-                            <div class="guardian-block">
-                                <span class="guardian-title">Father's Name :</span>
-                                <strong class="guardian-val">Mr. Rajman Yadav</strong>
-                                <span class="guardian-title">Address :</span>
-                                <p class="guardian-val">Vill Itai Itwa Balrampur</p>
-                            </div>
-                        </div>
-
-                        <div class="terms-container">
-                            <div class="terms-pill">TERMS & CONDITIONS :</div>
-                            <ul>
-                                <li>This card is non-transferable.</li>
-                                <li>Student has to carry this card at all times.</li>
-                                <li>If the card gets lost / damaged, kindly inform the librarian.</li>
-                            </ul>
-                        </div>
-
-                        <div class="tollfree-bar">
-                            <span>TOLL FREE</span>
-                            <h4>1800 270 5600</h4>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            
-            <p class="flip-hint-text"><i class="fa-solid fa-arrows-rotate"></i> Hover / Cursor layein ID Card ko Rotate karne ke liye</p>
+        <div class="journey-item-card active-journey-card">
+          <span class="card-year active-text">CURRENTLY PURSUING</span>
+          <h3>B.Tech in CSE</h3>
+          <h4>Maharana Pratap Engineering College, Kanpur</h4>
+          <p>Pursuing Computer Science & Engineering with focus on Full-Stack, AI, and Software Systems.</p>
         </div>
-        <div id="education-journey-modal" class="journey-fullscreen-overlay">
-  <div class="journey-3d-card-container">
-    
-    <button class="journey-close-btn" onclick="closeEducationJourney()">&times;</button>
-    
-    <div class="journey-header">
-      <span class="journey-chip">ACADEMIC & CAREER PATH</span>
-      <h2>My Educational Journey</h2>
-      <p>From School Foundations to Software Engineering</p>
-    </div>
-
-    <div class="journey-timeline-grid">
-      
-      <div class="journey-card-3d">
-        <div class="journey-card-glow"></div>
-        <div class="journey-year-badge">2023 • 86% SCORE</div>
-        <div class="journey-icon-wrap"><i class="fa-solid fa-school"></i></div>
-        <h3>High School (10th)</h3>
-        <h4>H.R.A Inter College, Utraula, Balrampur</h4>
-        <p>Completed 10th standard with an outstanding <strong>86%</strong>, building strong analytical and mathematical fundamentals.</p>
-      </div>
-
-      <div class="journey-card-3d">
-        <div class="journey-card-glow"></div>
-        <div class="journey-year-badge">2025 • 65.5% SCORE</div>
-        <div class="journey-icon-wrap"><i class="fa-solid fa-building-columns"></i></div>
-        <h3>Intermediate (12th)</h3>
-        <h4>H.R.A Inter College, Utraula, Balrampur</h4>
-        <p>Completed higher secondary education in 2025 with <strong>65.5%</strong>, specializing in Science & Mathematics.</p>
-      </div>
-
-      <div class="journey-card-3d highlight-card-3d">
-        <div class="journey-card-glow"></div>
-        <div class="journey-year-badge active-badge">PURSUING DEGREE</div>
-        <div class="journey-icon-wrap"><i class="fa-solid fa-laptop-code"></i></div>
-        <h3>B.Tech in CSE</h3>
-        <h4>Maharana Pratap Engineering College, Kanpur</h4>
-        <p>Pursuing Computer Science & Engineering. Deep diving into Full-Stack Web Development, Data Structures, Algorithms, and AI Systems.</p>
-      </div>
-
-    </div>
-
-  </div>
-</div>
-<div id="education-journey-modal" class="journey-fullscreen-overlay">
-  <div class="journey-3d-card-container">
-    
-    <button class="journey-close-btn" onclick="closeEducationJourney()">&times;</button>
-    
-    <div class="journey-header">
-      <span class="journey-chip">ACADEMIC & CAREER PATH</span>
-      <h2>My Educational Journey</h2>
-      <p>From School Foundations to Software Engineering</p>
-    </div>
-
-    <div class="journey-timeline-grid">
-      
-      <div class="journey-card-3d">
-        <div class="journey-year-badge">2023 • 86% SCORE</div>
-        <div class="journey-icon-wrap"><i class="fa-solid fa-school"></i></div>
-        <h3>High School (10th)</h3>
-        <h4>H.R.A Inter College, Utraula, Balrampur</h4>
-        <p>Completed 10th standard in 2023 with <strong>86%</strong>, building strong analytical and mathematical fundamentals.</p>
-      </div>
-
-      <div class="journey-card-3d">
-        <div class="journey-year-badge">2025 • 65.5% SCORE</div>
-        <div class="journey-icon-wrap"><i class="fa-solid fa-building-columns"></i></div>
-        <h3>Intermediate (12th)</h3>
-        <h4>H.R.A Inter College, Utraula, Balrampur</h4>
-        <p>Completed higher secondary education in 2025 with <strong>65.5%</strong>, specializing in Science & Mathematics.</p>
-      </div>
-
-      <div class="journey-card-3d highlight-card-3d">
-        <div class="journey-year-badge active-badge">PURSUING DEGREE</div>
-        <div class="journey-icon-wrap"><i class="fa-solid fa-laptop-code"></i></div>
-        <h3>B.Tech in CSE</h3>
-        <h4>Maharana Pratap Engineering College, Kanpur</h4>
-        <p>Pursuing Computer Science & Engineering. Specializing in Full-Stack Web Development, Data Structures, Algorithms, and AI Systems.</p>
-      </div>
-
-    </div>
-
-  </div>
-</div>
-<div id="education-journey-modal" style="display: none; position: fixed; inset: 0; width: 100vw; height: 100vh; background: rgba(3, 6, 15, 0.95); backdrop-filter: blur(12px); z-index: 999999; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box;">
-  <div style="background: linear-gradient(145deg, #101830, #080c1a); border: 1px solid rgba(0, 240, 255, 0.4); box-shadow: 0 0 50px rgba(0, 240, 255, 0.2); border-radius: 20px; width: 100%; max-width: 850px; max-height: 85vh; overflow-y: auto; padding: 35px; position: relative; color: #fff;">
-    
-    <button onclick="closeJourneyModal()" style="position: absolute; top: 15px; right: 20px; background: none; border: none; color: #00f0ff; font-size: 32px; cursor: pointer;">&times;</button>
-    
-    <div style="text-align: center; margin-bottom: 25px;">
-      <span style="font-size: 11px; color: #00f0ff; letter-spacing: 2px; font-weight: bold; background: rgba(0,240,255,0.1); padding: 4px 12px; border-radius: 20px;">ACADEMIC TIMELINE</span>
-      <h2 style="margin: 8px 0 0; font-size: 24px;">My Educational Journey</h2>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 18px; border-left: 4px solid #00f0ff;">
-        <span style="font-size: 11px; color: #00f0ff; font-weight: bold;">2023 • 86%</span>
-        <h3 style="margin: 6px 0 2px; font-size: 16px;">High School (10th)</h3>
-        <p style="margin: 0; font-size: 12px; color: #94a3b8;">H.R.A Inter College, Utraula, Balrampur</p>
-      </div>
-
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 18px; border-left: 4px solid #00f0ff;">
-        <span style="font-size: 11px; color: #00f0ff; font-weight: bold;">2025 • 65.5%</span>
-        <h3 style="margin: 6px 0 2px; font-size: 16px;">Intermediate (12th)</h3>
-        <p style="margin: 0; font-size: 12px; color: #94a3b8;">H.R.A Inter College, Utraula, Balrampur</p>
-      </div>
-
-      <div style="background: rgba(0,240,255,0.05); border: 1px solid rgba(0,240,255,0.3); border-radius: 14px; padding: 18px; border-left: 4px solid #10b981;">
-        <span style="font-size: 11px; color: #10b981; font-weight: bold;">PURSUING</span>
-        <h3 style="margin: 6px 0 2px; font-size: 16px;">B.Tech in CSE</h3>
-        <p style="margin: 0; font-size: 12px; color: #94a3b8;">Maharana Pratap Engineering College, Kanpur</p>
       </div>
     </div>
   </div>
-</div>
 
-<div id="student-id-modal" style="display: none; position: fixed; inset: 0; width: 100vw; height: 100vh; background: rgba(3, 6, 15, 0.95); backdrop-filter: blur(12px); z-index: 999999; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box;">
-  <div style="background: linear-gradient(145deg, #101830, #080c1a); border: 1px solid rgba(0, 240, 255, 0.4); box-shadow: 0 0 50px rgba(0, 240, 255, 0.2); border-radius: 20px; width: 100%; max-width: 380px; padding: 30px; text-align: center; position: relative; color: #fff;">
-    <button onclick="closeIDCardModal()" style="position: absolute; top: 12px; right: 18px; background: none; border: none; color: #00f0ff; font-size: 28px; cursor: pointer;">&times;</button>
-    <img src="raj.jpg" alt="Durgesh" style="width: 85px; height: 85px; border-radius: 50%; border: 2px solid #00f0ff; margin-bottom: 12px; object-fit: cover;">
-    <h3 style="margin: 0; font-size: 18px;">Durgesh Yadav</h3>
-    <p style="color: #94a3b8; font-size: 12px; margin: 4px 0 15px;">CSE Student & Developer</p>
-    <div style="background: rgba(255,255,255,0.04); padding: 10px; border-radius: 10px; font-size: 12px;">
-      <p style="margin: 0; color: #00f0ff; font-weight: bold;">MPEC KANPUR</p>
-    </div>
-  </div>
-</div>
-<div id="education-journey-modal" style="display: none; position: fixed; inset: 0; width: 100vw; height: 100vh; background: rgba(3, 6, 15, 0.95); backdrop-filter: blur(12px); z-index: 999999; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box;">
-  <div style="background: linear-gradient(145deg, #101830, #080c1a); border: 1px solid rgba(0, 240, 255, 0.4); box-shadow: 0 0 50px rgba(0, 240, 255, 0.2); border-radius: 20px; width: 100%; max-width: 850px; max-height: 85vh; overflow-y: auto; padding: 35px; position: relative; color: #fff;">
-    <button onclick="closeJourneyModal()" style="position: absolute; top: 15px; right: 20px; background: none; border: none; color: #00f0ff; font-size: 32px; cursor: pointer;">&times;</button>
-    <div style="text-align: center; margin-bottom: 25px;">
-      <span style="font-size: 11px; color: #00f0ff; letter-spacing: 2px; font-weight: bold; background: rgba(0,240,255,0.1); padding: 4px 12px; border-radius: 20px;">ACADEMIC TIMELINE</span>
-      <h2 style="margin: 8px 0 0; font-size: 24px;">My Educational Journey</h2>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 18px; border-left: 4px solid #00f0ff;">
-        <span style="font-size: 11px; color: #00f0ff; font-weight: bold;">2023 • 86%</span>
-        <h3 style="margin: 6px 0 2px; font-size: 16px;">High School (10th)</h3>
-        <p style="margin: 0; font-size: 12px; color: #94a3b8;">H.R.A Inter College, Utraula, Balrampur</p>
-      </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 18px; border-left: 4px solid #00f0ff;">
-        <span style="font-size: 11px; color: #00f0ff; font-weight: bold;">2025 • 65.5%</span>
-        <h3 style="margin: 6px 0 2px; font-size: 16px;">Intermediate (12th)</h3>
-        <p style="margin: 0; font-size: 12px; color: #94a3b8;">H.R.A Inter College, Utraula, Balrampur</p>
-      </div>
-      <div style="background: rgba(0,240,255,0.05); border: 1px solid rgba(0,240,255,0.3); border-radius: 14px; padding: 18px; border-left: 4px solid #10b981;">
-        <span style="font-size: 11px; color: #10b981; font-weight: bold;">PURSUING</span>
-        <h3 style="margin: 6px 0 2px; font-size: 16px;">B.Tech in CSE</h3>
-        <p style="margin: 0; font-size: 12px; color: #94a3b8;">Maharana Pratap Engineering College, Kanpur</p>
+  <!-- 7. ID CARD POPUP MODAL -->
+  <div id="student-id-modal" class="fullscreen-popup-overlay">
+    <div class="popup-modal-container" style="max-width: 360px; text-align: center;">
+      <button onclick="closeIDCardModal()" class="popup-close-btn">&times;</button>
+      <img src="raj.jpg" alt="Durgesh Yadav" style="width: 90px; height: 90px; border-radius: 50%; border: 2px solid #00f0ff; object-fit: cover; margin-bottom: 12px;">
+      <h3 style="margin: 0; font-size: 20px; color: #fff;">Durgesh Yadav</h3>
+      <p style="color: #00f0ff; font-size: 13px; margin: 4px 0 15px;">CSE Undergrad & Developer</p>
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 12px; border-radius: 12px; font-size: 12px; color: #94a3b8; text-align: left;">
+        <p style="margin: 3px 0;"><strong>College:</strong> MPEC Kanpur</p>
+        <p style="margin: 3px 0;"><strong>Branch:</strong> Computer Science (CSE)</p>
+        <p style="margin: 3px 0;"><strong>Status:</strong> Active Developer</p>
       </div>
     </div>
   </div>
-</div>
 
-<div id="student-id-modal" style="display: none; position: fixed; inset: 0; width: 100vw; height: 100vh; background: rgba(3, 6, 15, 0.95); backdrop-filter: blur(12px); z-index: 999999; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box;">
-  <div style="background: linear-gradient(145deg, #101830, #080c1a); border: 1px solid rgba(0, 240, 255, 0.4); box-shadow: 0 0 50px rgba(0, 240, 255, 0.2); border-radius: 20px; width: 100%; max-width: 380px; padding: 30px; text-align: center; position: relative; color: #fff;">
-    <button onclick="closeIDCardModal()" style="position: absolute; top: 12px; right: 18px; background: none; border: none; color: #00f0ff; font-size: 28px; cursor: pointer;">&times;</button>
-    <img src="raj.jpg" alt="Durgesh" style="width: 85px; height: 85px; border-radius: 50%; border: 2px solid #00f0ff; margin-bottom: 12px; object-fit: cover;">
-    <h3 style="margin: 0; font-size: 18px;">Durgesh Yadav</h3>
-    <p style="color: #94a3b8; font-size: 12px; margin: 4px 0 15px;">CSE Student & Developer</p>
-    <div style="background: rgba(255,255,255,0.04); padding: 10px; border-radius: 10px; font-size: 12px;">
-      <p style="margin: 0; color: #00f0ff; font-weight: bold;">MPEC KANPUR</p>
-    </div>
-  </div>
-</div>
+  <script src="script.js"></script>
 </body>
 </html>

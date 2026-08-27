@@ -1,24 +1,21 @@
-// ================= 1. DURGESH KINETIC VARIABLE TYPOGRAPHY =================
-document.addEventListener('DOMContentLoaded', () => {
-  const kineticChars = document.querySelectorAll('.kinetic-char');
+// ================= 1. VARIABLE TYPOGRAPHY PROXIMITY EFFECT =================
+window.addEventListener('DOMContentLoaded', () => {
+  const chars = document.querySelectorAll('.kinetic-char');
 
-  if (kineticChars.length > 0) {
+  if (chars.length > 0) {
     window.addEventListener('mousemove', (e) => {
-      kineticChars.forEach((char) => {
+      chars.forEach((char) => {
         const rect = char.getBoundingClientRect();
         const charCenterX = rect.left + rect.width / 2;
         const charCenterY = rect.top + rect.height / 2;
 
         const dist = Math.hypot(e.clientX - charCenterX, e.clientY - charCenterY);
-        const maxDist = 220; // Proximity radius
+        const maxDist = 200;
 
         if (dist < maxDist) {
           const intensity = 1 - dist / maxDist;
-          const weight = Math.round(200 + intensity * 700);
-          const scale = (1 + intensity * 0.15).toFixed(2);
-
-          char.style.fontWeight = weight;
-          char.style.transform = `scale(${scale}) translateY(-${intensity * 8}px)`;
+          char.style.fontWeight = Math.round(200 + intensity * 700);
+          char.style.transform = `scale(${(1 + intensity * 0.15).toFixed(2)}) translateY(-${intensity * 8}px)`;
           char.style.color = '#00f0ff';
           char.style.textShadow = '0 0 25px rgba(0, 240, 255, 0.7)';
         } else {
@@ -32,33 +29,49 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ================= 2. MODAL CONTROLLERS (GLOBAL WINDOW SCOPE) =================
-// Journey Modal
-window.openJourneyModal = function() {
+// ================= 2. MODAL CONTROLS =================
+function openJourneyModal() {
   const m = document.getElementById('education-journey-modal');
   if (m) m.style.display = 'flex';
-};
-
-window.closeJourneyModal = function() {
+}
+function closeJourneyModal() {
   const m = document.getElementById('education-journey-modal');
   if (m) m.style.display = 'none';
-};
+}
 
-// ID Card Modal
-window.openIDCardModal = function() {
-  const idM = document.getElementById('student-id-modal');
-  if (idM) idM.style.display = 'flex';
-};
+function openIDCardModal() {
+  const m = document.getElementById('student-id-modal');
+  if (m) m.style.display = 'flex';
+}
+function closeIDCardModal() {
+  const m = document.getElementById('student-id-modal');
+  if (m) m.style.display = 'none';
+}
 
-window.closeIDCardModal = function() {
-  const idM = document.getElementById('student-id-modal');
-  if (idM) idM.style.display = 'none';
-};
-
-// Background Click to Close Modals
-window.addEventListener('click', function(e) {
+// Background click close
+window.addEventListener('click', (e) => {
   const jModal = document.getElementById('education-journey-modal');
   const idModal = document.getElementById('student-id-modal');
-  if (e.target === jModal) jModal.style.display = 'none';
-  if (e.target === idModal) idModal.style.display = 'none';
+  if (e.target === jModal) closeJourneyModal();
+  if (e.target === idModal) closeIDCardModal();
 });
+
+// ================= 3. AI VIDEO SOUND TOGGLE =================
+function toggleIntroSound() {
+  const vid = document.getElementById('introAiVideo');
+  const icon = document.getElementById('soundIcon');
+  const text = document.getElementById('soundText');
+  if (vid) {
+    if (vid.muted) {
+      vid.muted = false;
+      vid.volume = 1.0;
+      vid.play();
+      if (icon) icon.className = 'fa-solid fa-volume-high';
+      if (text) text.innerText = 'Mute';
+    } else {
+      vid.muted = true;
+      if (icon) icon.className = 'fa-solid fa-volume-xmark';
+      if (text) text.innerText = 'Unmute';
+    }
+  }
+}
