@@ -3162,3 +3162,25 @@ body {
   color: #475569;
   letter-spacing: 2px;
 }
+/* Clickable Social & Contact Links */
+.contact-row.clickable-link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-row.clickable-link:hover {
+  transform: translateX(6px);
+}
+
+.contact-row.clickable-link:hover span {
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.contact-row.clickable-link:hover i {
+  transform: scale(1.15);
+}
