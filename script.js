@@ -406,3 +406,38 @@ if (nameContainer) {
     });
   });
 }
+// Variable Typography Weight Tracking for "DURGESH"
+const kineticChars = document.querySelectorAll('.kinetic-char');
+
+if (kineticChars.length > 0) {
+  window.addEventListener('mousemove', (e) => {
+    kineticChars.forEach((char) => {
+      const rect = char.getBoundingClientRect();
+      const charCenterX = rect.left + rect.width / 2;
+      const charCenterY = rect.top + rect.height / 2;
+
+      // Distance calculation
+      const dist = Math.hypot(e.clientX - charCenterX, e.clientY - charCenterY);
+      const maxDistance = 240; // Effect radius in px
+
+      if (dist < maxDistance) {
+        // Normalizes distance: 0 (closest) to 1 (far away)
+        const intensity = 1 - dist / maxDistance;
+        
+        // Dynamic weight: 200 (ultra thin) to 900 (ultra bold)
+        const targetWeight = Math.round(200 + intensity * 700);
+        const scale = (1 + intensity * 0.12).toFixed(2);
+        
+        char.style.fontWeight = targetWeight;
+        char.style.transform = `scale(${scale}) translateY(-${intensity * 6}px)`;
+        char.style.color = intensity > 0.6 ? '#ffffff' : '#e2e8f0';
+        char.style.textShadow = intensity > 0.5 ? '0 0 25px rgba(0, 240, 255, 0.4)' : 'none';
+      } else {
+        char.style.fontWeight = '200';
+        char.style.transform = 'scale(1) translateY(0px)';
+        char.style.color = '#cbd5e1';
+        char.style.textShadow = 'none';
+      }
+    });
+  });
+}
