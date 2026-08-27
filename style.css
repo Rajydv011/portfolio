@@ -711,66 +711,97 @@ body {
 }
 
 /* Purple Glow Cards */
+/* ================= COMPACT SIDE-BY-SIDE PROJECTS GRID ================= */
+.common-section {
+  padding: 60px 6%;
+  background: #060913;
+  color: #fff;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-chip {
+  font-size: 11px;
+  color: #00f0ff;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgba(0, 240, 255, 0.1);
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.section-head h2 {
+  font-size: 28px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #ffffff;
+}
+
+/* 3 Cards Bagal-Bagal me Layout */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns side-by-side */
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.card {
-    background: rgba(18, 10, 36, 0.75);
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    border-radius: 16px;
-    padding: 24px;
-    backdrop-filter: blur(12px);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
+.project-card {
+  background: linear-gradient(145deg, #101830, #080c1a);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 16px;
+  padding: 22px 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #a855f7;
-    box-shadow: 0 12px 35px rgba(168, 85, 247, 0.25);
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: #00f0ff;
+  box-shadow: 0 12px 30px rgba(0, 240, 255, 0.25);
 }
 
-.card-badge {
-    align-self: flex-start;
-    font-size: 11px;
-    background: rgba(168, 85, 247, 0.2);
-    color: #c084fc;
-    border: 1px solid rgba(168, 85, 247, 0.3);
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-bottom: 12px;
-    font-weight: 600;
+.proj-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 700;
+  color: #00f0ff;
+  background: rgba(0, 240, 255, 0.12);
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
-.card h3 { font-size: 1.4rem; margin-bottom: 10px; color: #ffffff; }
-.card p { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; margin-bottom: 18px; }
-
-.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-.tags span {
-    font-size: 12px;
-    background: rgba(168, 85, 247, 0.1);
-    border: 1px solid rgba(168, 85, 247, 0.25);
-    padding: 3px 8px;
-    border-radius: 6px;
-    color: #e9d5ff;
+.project-card h3 {
+  font-size: 17px;
+  margin: 0 0 8px;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-.card-links { display: flex; gap: 12px; }
-.link-btn {
-    padding: 8px 16px;
-    background: #a855f7;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 13px;
-    border-radius: 6px;
-    transition: 0.3s;
+.project-card p {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
 }
 
+/* Mobile responsive fix (phone par automatic adjust ho jayega) */
+@media (max-width: 850px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .link-btn:hover {
     background: #c084fc;
     box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
