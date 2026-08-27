@@ -168,20 +168,38 @@
     </div>
   </div>
 
-  <!-- 7. ID CARD POPUP MODAL -->
-  <div id="student-id-modal" class="fullscreen-popup-overlay">
-    <div class="popup-modal-container" style="max-width: 360px; text-align: center;">
-      <button onclick="closeIDCardModal()" class="popup-close-btn">&times;</button>
-      <img src="raj.jpg" alt="Durgesh Yadav" style="width: 90px; height: 90px; border-radius: 50%; border: 2px solid #00f0ff; object-fit: cover; margin-bottom: 12px;">
-      <h3 style="margin: 0; font-size: 20px; color: #fff;">Durgesh Yadav</h3>
-      <p style="color: #00f0ff; font-size: 13px; margin: 4px 0 15px;">CSE Undergrad & Developer</p>
-      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 12px; border-radius: 12px; font-size: 12px; color: #94a3b8; text-align: left;">
-        <p style="margin: 3px 0;"><strong>College:</strong> MPEC Kanpur</p>
-        <p style="margin: 3px 0;"><strong>Branch:</strong> Computer Science (CSE)</p>
-        <p style="margin: 3px 0;"><strong>Status:</strong> Active Developer</p>
+  <!-- HANGING LANYARD ROPE ID CARD -->
+<div id="student-id-modal" class="lanyard-overlay">
+  <div class="lanyard-wrapper">
+    <!-- Rope / Lanyard Straps -->
+    <div class="lanyard-strap"></div>
+    <div class="lanyard-clip"></div>
+
+    <!-- ID Card Box -->
+    <div class="lanyard-card">
+      <button onclick="closeIDCardModal()" class="lanyard-close-btn">&times;</button>
+      
+      <div class="id-card-top-badge">STUDENT DEVELOPER ID</div>
+      
+      <div class="id-photo-frame">
+        <img src="raj.jpg" alt="Durgesh Yadav">
+      </div>
+
+      <h3 class="id-name">Durgesh Yadav</h3>
+      <p class="id-role">CSE Undergrad & Developer</p>
+
+      <div class="id-details-box">
+        <div class="id-row"><span>College:</span> <strong>MPEC Kanpur</strong></div>
+        <div class="id-row"><span>Branch:</span> <strong>Computer Science (CSE)</strong></div>
+        <div class="id-row"><span>Status:</span> <strong style="color: #10b981;">Active Developer</strong></div>
+      </div>
+
+      <div class="id-barcode-mock">
+        <span>||||||| |||| |||||| |||||||| ||||</span>
       </div>
     </div>
   </div>
+</div>
 
   <script src="script.js"></script>
 </body>
