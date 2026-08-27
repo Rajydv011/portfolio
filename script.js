@@ -60,3 +60,33 @@ function closeIDCardModal(event) {
   const modal = document.getElementById('idCardModal');
   if (modal) modal.classList.remove('active');
 }
+// Open Modal with Rope Drop
+function openIDCardModal() {
+  const modal = document.getElementById('idCardModal');
+  if (modal) {
+    modal.classList.add('active');
+    
+    // Slight 3D swing effect on mousemove
+    const card = document.getElementById('hangingCard');
+    window.addEventListener('mousemove', handleCardSwing);
+  }
+}
+
+function handleCardSwing(e) {
+  const card = document.getElementById('hangingCard');
+  if (!card) return;
+  const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+  const yAxis = (window.innerHeight / 2 - e.pageY) / 35;
+  card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+}
+
+// Close Modal
+function closeIDCardModal(event) {
+  const modal = document.getElementById('idCardModal');
+  if (modal) {
+    modal.classList.remove('active');
+    window.removeEventListener('mousemove', handleCardSwing);
+    const card = document.getElementById('hangingCard');
+    if (card) card.style.transform = 'none';
+  }
+}

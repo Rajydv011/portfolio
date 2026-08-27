@@ -175,25 +175,27 @@
   </section>
 
   <!-- ================= ID CARD MODAL ================= -->
-  <div id="idCardModal" class="modal-overlay" onclick="closeIDCardModal(event)">
-    <div class="id-card-wrap" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeIDCardModal()">&times;</button>
-      <div class="id-badge-header">
-        <span class="id-org">MPEC KANPUR</span>
-        <span class="id-status">CSE ENGG</span>
-      </div>
-      <div class="id-photo-frame">
-        <img src="raj.jpg" alt="Durgesh Yadav" onerror="this.src='https://via.placeholder.com/150'">
-      </div>
-      <h3 class="id-name">DURGESH YADAV</h3>
-      <p class="id-role">Software Developer & Student</p>
-      <div class="id-details">
-        <div><span>Field</span><strong>Computer Science</strong></div>
-        <div><span>Batch</span><strong>2023 - Present</strong></div>
+  <<div id="idCardModal" class="rope-modal-overlay" onclick="closeIDCardModal(event)">
+  <div class="rope-hanging-wrapper" onclick="event.stopPropagation()">
+    
+    <div class="rope-container">
+      <div class="rope-strap left-strap"></div>
+      <div class="rope-strap right-strap"></div>
+      <div class="rope-clip">
+        <div class="clip-ring"></div>
+        <div class="clip-hook"></div>
       </div>
     </div>
-  </div>
 
+    <div class="hanging-card-body" id="hangingCard">
+      <button class="rope-close-btn" onclick="closeIDCardModal()">&times;</button>
+      <div class="card-glass-frame">
+        <img src="idcard.jpg" alt="Durgesh Yadav Original ID Card" class="id-original-img">
+      </div>
+    </div>
+
+  </div>
+</div>
   <script src="script.js"></script>
 </body>
 </html>
