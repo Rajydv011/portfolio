@@ -372,3 +372,54 @@ function animateEmojiUniverse() {
   requestAnimationFrame(animateEmojiUniverse);
 }
 animateEmojiUniverse();
+// ================= FORMSPREE DIRECT AJAX SUBMIT =================
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const status = document.getElementById('formStatus');
+    const formData = new FormData(contactForm);
+
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    btn.style.pointerEvents = 'none';
+    status.style.display = 'none';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        btn.innerHTML = 'Message Sent! ✅';
+        btn.style.background = '#10b981';
+        btn.style.borderColor = '#10b981';
+        contactForm.reset();
+
+        setTimeout(() => {
+          btn.innerHTML = 'Send Message';
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.style.pointerEvents = 'auto';
+        }, 3500);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      btn.innerHTML = 'Failed to Send ❌';
+      btn.style.background = '#ef4444';
+      btn.style.borderColor = '#ef4444';
+      btn.style.pointerEvents = 'auto';
+
+      setTimeout(() => {
+        btn.innerHTML = 'Send Message';
+        btn.style.background = '';
+        btn.style.borderColor = '';
+      }, 3500);
+    }
+  });
+}
