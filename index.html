@@ -5,232 +5,687 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Durgesh Yadav | Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-
-  <!-- ================= NAVBAR ================= -->
-  <header>
-    <nav class="navbar">
-     <div class="logo">
-  <div class="logo-split-badge">
-    <span class="char-d">D</span>
-    <span class="char-divider">|</span>
-    <span class="char-y">Y</span>
+<body class="crimson-theme">=
+    <!-- ================= DYNAMIC 3D FLOATING EMOJI UNIVERSE ================= -->
+  <div class="floating-emoji-universe" id="emojiUniverse" aria-hidden="true">
+    <span class="emoji-item e-1" data-depth="2.2">🖤</span>
+    <span class="emoji-item e-2" data-depth="1.6">✅</span>
+    <span class="emoji-item e-3" data-depth="3.0">❌</span>
+    <span class="emoji-item e-4" data-depth="1.8">🎀</span>
+    <span class="emoji-item e-5" data-depth="2.5">🎈</span>
+    <span class="emoji-item e-6" data-depth="1.4">📱</span>
+    <span class="emoji-item e-7" data-depth="2.8">💻</span>
+    <span class="emoji-item e-8" data-depth="1.9">⌨️</span>
+    <span class="emoji-item e-9" data-depth="3.2">🖥️</span>
+    <span class="emoji-item e-10" data-depth="1.5">🖲️</span>
+    <span class="emoji-item e-11" data-depth="2.6">💽</span>
+    <span class="emoji-item e-12" data-depth="1.7">♦️</span>
+    <span class="emoji-item e-13" data-depth="2.9">♏</span>
+    <span class="emoji-item e-14" data-depth="1.3">♌</span>
+    <span class="emoji-item e-15" data-depth="2.4">🖤</span>
+    <span class="emoji-item e-16" data-depth="2.0">🤍</span>
   </div>
-  <span class="logo-text">PORTFOLIO<span>.</span></span>
-</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <button class="resume-nav-btn" onclick="openResumeModal()">
-            <i class="fa-solid fa-file-lines"></i> My Resume
-          </button>
-        </li>
-      </ul>
-      <div class="nav-right-actions">
-        <button class="view-id-nav-btn" onclick="openIDCardModal()">
-          <i class="fa-solid fa-id-card"></i> View ID Card
-        </button>
-        <a href="#contact" class="nav-cta-btn">Let's Talk &rarr;</a>
-      </div>
-    </nav>
-  </header>
+    <!-- ================= INTERACTIVE FIRE CURSOR CANVAS ================= -->
+  <div class="custom-cursor-core" id="cursorCore"></div>
+  <canvas id="fireCursorCanvas" class="fire-cursor-canvas"></canvas>
 
-  <!-- ================= 1. KINETIC HERO (DURGESH MOTION) ================= -->
-  <section id="home" class="hero-stage">
-    <div class="hero-top-badge">
-      <span class="dot">●</span> SHIPPING IDEAS INTO REALITY
-    </div>
+  <!-- ================= SINGLE FIXED FLOATING NAVBAR ================= -->
+  <nav class="crimson-pill-navbar" id="globalNav">
+    <a href="#welcome" class="nav-pill-item"><i class="fa-solid fa-satellite-dish"></i> Start</a>
+    <a href="#home" class="nav-pill-item active"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="#about" class="nav-pill-item"><i class="fa-solid fa-user"></i> About</a>
+    <a href="#projects" class="nav-pill-item"><i class="fa-solid fa-folder"></i> Projects</a>
+    <a href="#services" class="nav-pill-item"><i class="fa-solid fa-code"></i> Services</a>
+    <a href="#contact" class="nav-pill-item"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </nav>
 
-    <div class="kinetic-brand-container">
-      <div class="kinetic-text-row">
-        <span class="v-char">D</span>
-        <span class="v-char">U</span>
-        <span class="v-char">R</span>
-        <span class="v-char">G</span>
-        <span class="v-char">E</span>
-        <span class="v-char">S</span>
-        <span class="v-char">H</span>
+  <!-- ================= PAGE 1: WELCOME / SYSTEM READY ================= -->
+  <main class="crimson-landing-card" id="welcome">
+    <div class="landing-left">
+      <div class="system-tag-row">
+        <span class="sys-pill"><span class="dot-live">●</span> SYSTEM READY</span>
+        <span class="sys-pill">PORTFOLIO 2026</span>
+        <span class="sys-pill">UI LOADED</span>
       </div>
-      <div class="center-floating-pill">
-        CRAFTING EXPERIENCES THAT PEOPLE REMEMBER
-      </div>
-    </div>
 
-    <div class="hero-footer-content">
-      <p class="hero-desc">
-        Full-Stack Developer & Software Builder<br>
-        <span>Engineering fast, immersive, and motion-driven digital products.</span>
+      <h1 class="welcome-heading">Welcome to<br>my Portfolio<br>Website</h1>
+
+      <p class="welcome-subtext">
+        Building modern, reliable, and fast digital experiences with a focus on clean UI and solid engineering.
       </p>
-      <div class="hero-footer-content">
-      <p class="hero-desc">
-        Full-Stack Developer & Software Builder<br>
-        <span>Engineering fast, immersive, and motion-driven digital products.</span>
-      </p>
-      
-     <div class="hero-actions">
-        <a href="#projects" class="btn-cyan-pill">Explore Work &rarr;</a>
-        
-        <!-- Social Icons (GitHub, LinkedIn, X) -->
-        <div class="hero-inline-socials">
-          <a href="https://github.com/Rajydv011" target="_blank" rel="noopener noreferrer" title="GitHub" class="hero-social-btn">
-            <i class="fa-brands fa-github"></i>
+
+      <div class="live-status-group">
+        <span class="status-label">LIVE STATUS</span>
+        <div class="status-btn-row">
+          <a href="https://github.com/Rajydv011" target="_blank" rel="noopener noreferrer" class="status-pill-btn">
+            <i class="fa-brands fa-github"></i> GITHUB
           </a>
-          <a href="https://www.linkedin.com/in/raj-yadav-4729a2361" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="hero-social-btn">
-            <i class="fa-brands fa-linkedin-in"></i>
+          <a href="https://www.linkedin.com/in/raj-yadav-4729a2361" target="_blank" rel="noopener noreferrer" class="status-pill-btn">
+            <i class="fa-brands fa-linkedin-in"></i> LINKEDIN
           </a>
-          <a href="https://x.com/DurgeshhMr79822" target="_blank" rel="noopener noreferrer" title="X" class="hero-social-btn x-brand-btn">
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="x-svg-icon">
-              <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-            </svg>
+          <a href="https://x.com/DurgeshhMr79822" target="_blank" rel="noopener noreferrer" class="status-pill-btn">
+            <i class="fa-brands fa-x-twitter"></i> TWITTER/X
           </a>
+        </div>
+        <div class="domain-pill">
+          <span class="pulse-pink"></span> durgesh.dev
         </div>
       </div>
-  </section>
+    </div>
 
-  <!-- ================= 2. SPLIT ABOUT SECTION (TEXT + AI VIDEO) ================= -->
-  <section id="about" class="about-split-stage">
-    <div class="about-split-container">
-      
-      <div class="about-left-col">
-        <span class="section-chip">ABOUT ME</span>
-        <h2 class="about-title">Engineering The Future With Code & AI</h2>
-        <div class="about-text-wrap">
-          <p>Hello! I'm <strong>Durgesh Yadav</strong>, a dedicated Computer Science Engineering student and developer passionate about building interactive, high-performance web applications.</p>
-          <p>I focus on clean architecture, modern user interfaces, and integrating cutting-edge technologies like AI automation and responsive motion graphics.</p>
+    <div class="landing-right">
+      <div class="radar-card-box">
+        <div class="radar-top-info">
+          <span class="code-id">CORE: UI</span>
+          <span class="online-tag">● ONLINE</span>
         </div>
-        <div class="about-stats-grid">
-          <div class="stat-card"><h3>B.Tech</h3><p>CSE (Pursuing)</p></div>
-          <div class="stat-card"><h3>MPEC</h3><p>Kanpur</p></div>
-          <div class="stat-card"><h3>100%</h3><p>Dedication</p></div>
+
+        <div class="radar-circle-stage">
+          <div class="radar-orbit-ring ring-outer">
+            <span class="orbit-node node-top"><i class="fa-solid fa-bolt"></i></span>
+            <span class="orbit-node node-right"><i class="fa-solid fa-code"></i></span>
+            <span class="orbit-node node-bottom"><i class="fa-solid fa-terminal"></i></span>
+            <span class="orbit-node node-left"><i class="fa-solid fa-wifi"></i></span>
+          </div>
+
+          <div class="radar-video-core" onclick="toggleRadarVoice()" title="Click to Unmute / Play Sound">
+            <video id="radarVideo" class="core-video-media" src="raj.mp4" autoplay loop muted playsinline></video>
+            <div class="video-overlay-text" id="voiceIndicator">
+              <i class="fa-solid fa-volume-xmark" id="voiceIcon"></i>
+              <span id="voiceText">UNMUTE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="radar-bottom-metrics">
+          <div class="metric-item">
+            <span class="metric-val">06</span>
+            <span class="metric-label">Loaded</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-val">12ms</span>
+            <span class="metric-label">Stable</span>
+          </div>
         </div>
       </div>
+    </div>
+  </main>
 
-      <div class="about-right-col">
-        <div class="video-cyber-box">
-          <div class="video-badge-top"><span class="pulse-dot"></span> AI STREAM INTRO</div>
-          <button id="videoSoundBtn" onclick="toggleIntroSound()" class="video-sound-btn">
-            <i class="fa-solid fa-volume-xmark" id="soundIcon"></i> <span id="soundText">Unmute</span>
+  <!-- ================= PAGE 2: HERO / HOME ================= -->
+  <section class="crimson-page-wrapper" id="home">
+    <div class="crimson-hero-card">
+      
+      <!-- Left Details Column -->
+      <div class="hero-left-details">
+        <div class="avail-badge">
+          <span class="dot-pink">●</span> Available for freelance work
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm 
+          <span class="durgesh-3d-wrapper" id="durgesh3D">
+            <span class="d-char">D</span>
+            <span class="d-char">U</span>
+            <span class="d-char">R</span>
+            <span class="d-char">G</span>
+            <span class="d-char">E</span>
+            <span class="d-char">S</span>
+            <span class="d-char">H</span>
+          </span>
+        </h1>
+        <h2 class="hero-role">Full-Stack Developer</h2>
+
+        <p class="hero-bio">
+          I create beautiful, functional, and user-centered digital experiences. With a strong passion for web development, I bring ideas to life through clean code and thoughtful design.
+        </p>
+
+        <div class="hero-meta-row">
+          <span><i class="fa-solid fa-location-dot"></i> Based in India</span>
+          <span><i class="fa-solid fa-circle-check"></i> Available Now</span>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#contact" class="btn-crimson-solid">
+            <i class="fa-solid fa-paper-plane"></i> Hire Me
+          </a>
+          <button type="button" class="btn-crimson-outline" onclick="openResumeModal()">
+            <i class="fa-solid fa-download"></i> View CV
           </button>
-          <video id="introAiVideo" class="intro-media-tag" src="raj.mp4" autoplay loop muted playsinline></video>
+        </div>
+
+        <div class="hero-social-footer">
+          <span class="social-label">Follow me:</span>
+          <div class="social-links-row">
+            <a href="https://github.com/Rajydv011" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/raj-yadav-4729a2361" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/DurgeshhMr79822" target="_blank" rel="noopener noreferrer" class="x-social-btn" title="X (Twitter)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="https://instagram.com/durgeshh_02.5" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Photo Column (MUST BE SIBLING TO LEFT DETAILS) -->
+      <div class="hero-right-avatar">
+        <div class="avatar-3d-stage">
+          <div class="avatar-3d-card" id="avatar3DCard">
+            <img src="aiavtar.png" alt="Durgesh Profile" class="avatar-photo-media" id="profilePhoto" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
+            <div class="avatar-badge-tag">
+              <span class="avatar-pulse"></span> DEVELOPER
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ================= 3. PROJECTS SECTION (COMPACT 3 CARDS) ================= -->
-  <section id="projects" class="projects-section">
-    <div class="section-head">
-      <span class="section-chip">MY WORKS</span>
-      <h2>Featured Projects</h2>
-    </div>
-
-    <div class="projects-grid">
-      <div class="project-card">
-        <span class="proj-badge">WEB APP</span>
-        <h3>AI Portfolio Interface</h3>
-        <p>Interactive portfolio built with modern typography physics, video integration, and dynamic contact flows.</p>
-      </div>
-      <div class="project-card">
-        <span class="proj-badge">FULL STACK</span>
-        <h3>Smart Healthcare Portal</h3>
-        <p>A digital platform managing consultation records, automated prescriptions, and clinical data pipelines.</p>
-      </div>
-      <div class="project-card">
-        <span class="proj-badge">ALGORITHMS</span>
-        <h3>Competitive Coding Suite</h3>
-        <p>Optimized data structures and algorithm solutions with performance profiling and clean code logic.</p>
+  <!-- ================= PAGE 3: ABOUT ME (SINGLE INSTANCE) ================= -->
+  <section class="crimson-page-wrapper" id="about">
+    <div class="about-top-bar">
+      <div class="split-dy-badge" title="Durgesh Yadav">
+        <span class="badge-char char-d">D</span>
+        <span class="badge-split-line"></span>
+        <span class="badge-char char-y">Y</span>
+        <div class="badge-user-info">
+          <span class="b-handle">@durgesh</span>
+          <span class="b-sub">Full-Stack Dev</span>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- ================= 4. CONTACT SECTION (CLICKABLE CHANNELS + FORM) ================= -->
-  <section id="contact" class="contact-section">
-    <div class="section-head">
-      <span class="section-chip">GET IN TOUCH</span>
-      <h2>Let's Collaborate</h2>
-    </div>
-
-    <div class="contact-container">
-      <!-- Direct Clickable Channels -->
-      <div class="contact-info-card">
-        <h3>Direct Channels</h3>
-        <p>Feel free to reach out directly via WhatsApp, email, or social profiles.</p>
+    <div class="crimson-about-card">
+      <div class="about-left-content">
+        <h2 class="about-sec-heading">ABOUT ME</h2>
         
-        <a href="mailto:dy4991919@gmail.com" class="contact-row clickable-link">
-          <i class="fa-solid fa-envelope"></i>
-          <span>dy4991919@gmail.com</span>
-        </a>
+        <p class="about-intro-p">
+          Hi! I'm <strong>Durgesh Yadav</strong>, a passionate and creative Full-Stack Developer & Engineering student based in India.
+        </p>
 
-        <a href="https://wa.me/919369578796" target="_blank" rel="noopener noreferrer" class="contact-row clickable-link">
-          <i class="fa-brands fa-whatsapp"></i>
-          <span>+91 9369578796</span>
-        </a>
+        <p class="about-p">
+          I'm currently pursuing my B.Tech in Computer Science and Engineering, where I've developed a deep interest in designing intuitive and visually appealing user interfaces that bring ideas to life on the web.
+        </p>
 
-        <a href="https://instagram.com/durgeshh_02.5" target="_blank" rel="noopener noreferrer" class="contact-row clickable-link">
-          <i class="fa-brands fa-instagram"></i>
-          <span>@durgeshh_02.5</span>
-        </a>
+        <p class="about-p">
+          I'm particularly focused on modern web design, responsive layouts, and interactive user experiences that blend beauty with functionality.
+        </p>
+
+        <p class="about-skills-lead">Right now, I'm improving my skills in:</p>
+
+        <ul class="about-tags-list">
+          <li><span class="tag-hash">#</span> Frontend architectures & Responsive Web Design</li>
+          <li><span class="tag-hash">#</span> C, C++, JavaScript & Full-Stack Development</li>
+          <li><span class="tag-hash">#</span> Creating interactive 3D web UI & real-time digital projects</li>
+        </ul>
       </div>
 
-      <!-- Contact Form -->
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-        <div class="form-group">
-          <input type="text" placeholder="Your Name" required>
+      <div class="about-right-polaroid">
+        <div class="polaroid-frame-wrapper" id="aboutPolaroid">
+          <div class="tape-corner tape-top-left"></div>
+          <div class="tape-corner tape-bottom-right"></div>
+          <!-- Right Column: Polaroid Taped Video Frame -->
+      <div class="about-right-polaroid">
+        <div class="polaroid-frame-wrapper" id="aboutPolaroid">
+          <div class="tape-corner tape-top-left"></div>
+          <div class="tape-corner tape-bottom-right"></div>
+          
+          <div class="polaroid-inner-card">
+            <!-- Smooth Autoplay Loop Video -->
+            <video class="polaroid-media-video" src="tech.mp4" autoplay loop muted playsinline></video>
+          </div>
         </div>
-        <div class="form-group">
-          <input type="email" placeholder="Your Email" required>
+      </div>
         </div>
-        <div class="form-group">
-          <textarea placeholder="Your Message" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message &rarr;</button>
-      </form>
+      </div>
     </div>
   </section>
-
-  <!-- ================= ID CARD MODAL ================= -->
-  <<div id="idCardModal" class="rope-modal-overlay" onclick="closeIDCardModal(event)">
-  <div class="rope-hanging-wrapper" onclick="event.stopPropagation()">
+  <!-- ================= 4. PAGE 4: FEATURED PROJECTS ================= -->
+  <section class="crimson-page-wrapper" id="projects">
     
-    <div class="rope-container">
-      <div class="rope-strap left-strap"></div>
-      <div class="rope-strap right-strap"></div>
-      <div class="rope-clip">
-        <div class="clip-ring"></div>
-        <div class="clip-hook"></div>
-      </div>
+    <!-- Section Header -->
+    <div class="projects-header-box">
+      <h2 class="projects-sec-title">FEATURED WORK</h2>
+      <p class="projects-sec-sub">
+        A showcase of my recent projects demonstrating capabilities in full-stack development, modern frameworks, and creative problem-solving.
+      </p>
     </div>
 
-    <div class="hanging-card-body" id="hangingCard">
-      <button class="rope-close-btn" onclick="closeIDCardModal()">&times;</button>
-      <div class="card-glass-frame">
-        <img src="idcard.jpg" alt="Durgesh Yadav Original ID Card" class="id-original-img">
+    <!-- 6 Projects Grid -->
+    <div class="projects-cards-grid">
+
+      <!-- Card 1 -->
+      <div class="project-glass-card">
+        <div class="project-preview-frame">
+          <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=600&q=80" alt="E-Commerce Website" class="project-img">
+        </div>
+        <h3 class="proj-title">E-Commerce Website</h3>
+        <p class="proj-desc">Modern online store with product filtering, cart, and payment system integration.</p>
+        <div class="proj-tech-tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <div class="proj-btn-row">
+          <a href="https://github.com/Rajydv011" target="_blank" rel="noopener noreferrer" class="proj-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#" class="proj-btn proj-btn-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
       </div>
+
+      <!-- Card 2 -->
+      <div class="project-glass-card">
+        <div class="project-preview-frame">
+          <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Portfolio Website" class="project-img">
+        </div>
+        <h3 class="proj-title">Portfolio Website</h3>
+        <p class="proj-desc">Personal interactive portfolio showcasing creative UI designs and coding projects.</p>
+        <div class="proj-tech-tags">
+          <span>HTML</span><span>CSS</span><span>Animation</span>
+        </div>
+        <div class="proj-btn-row">
+          <a href="https://github.com/Rajydv011" target="_blank" rel="noopener noreferrer" class="proj-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#" class="proj-btn proj-btn-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="project-glass-card">
+        <div class="project-preview-frame">
+          <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=600&q=80" alt="Weather App" class="project-img">
+        </div>
+        <h3 class="proj-title">Weather App</h3>
+        <p class="proj-desc">Responsive dynamic application fetching real-time weather data with weather API integration.</p>
+        <div class="proj-tech-tags">
+          <span>HTML</span><span>CSS</span><span>API</span>
+        </div>
+        <div class="proj-btn-row">
+          <a href="https://github.com/Rajydv011" target="_blank" rel="noopener noreferrer" class="proj-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#" class="proj-btn proj-btn-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="project-glass-card">
+        <div class="project-preview-frame">
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80" alt="Blog Website" class="project-img">
+        </div>
+        <h3 class="proj-title">Blog Website</h3>
+        <p class="proj-desc">Clean and fast blogging platform with rich typography and dynamic content rendering.</p>
+        <div class="proj-tech-tags">
+          <span>HTML</span><span>Tailwind</span><span>JavaScript</span>
+        </div>
+        <div class="proj-btn-row">
+          <a href="https://github.com/Rajydv011" target="_blank" rel="noopener noreferrer" class="proj-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#" class="proj-btn proj-btn-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="project-glass-card">
+        <div class="project-preview-frame">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Game Landing Page" class="project-img">
+        </div>
+        <h3 class="proj-title">Game Landing Page</h3>
+        <p class="proj-desc">Immersive gaming portal with particle physics, sound triggers, and animated layout.</p>
+        <div class="proj-tech-tags">
+          <span>HTML</span><span>CSS</span><span>GSAP</span>
+        </div>
+        <div class="proj-btn-row">
+          <a href="https://github.com/Rajydv011" target="_blank" rel="noopener noreferrer" class="proj-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#" class="proj-btn proj-btn-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="project-glass-card">
+        <div class="project-preview-frame">
+          <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=600&q=80" alt="Task Manager" class="project-img">
+        </div>
+        <h3 class="proj-title">Task Manager</h3>
+        <p class="proj-desc">Productivity task board featuring local persistence, categorized priority, and modern UI.</p>
+        <div class="proj-tech-tags">
+          <span>HTML</span><span>CSS</span><span>JS</span>
+        </div>
+        <div class="proj-btn-row">
+          <a href="https://github.com/Rajydv011" target="_blank" rel="noopener noreferrer" class="proj-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#" class="proj-btn proj-btn-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ================= 5. PAGE 5: OUR FEATURES & SERVICES ================= -->
+  <section class="crimson-page-wrapper" id="services">
+    
+    <!-- Centered Crimson Title -->
+    <div class="services-header-box">
+      <h2 class="services-sec-title">OUR Features &amp; Services</h2>
+      <div class="services-title-underline"></div>
     </div>
 
+    <!-- 6 Services Grid (3x2 Exact Reel Match) -->
+    <div class="reel-services-grid">
+      
+      <!-- 1. Web Development -->
+      <div class="reel-service-card">
+        <div class="reel-icon-circle">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <h3 class="reel-card-title">Web Development</h3>
+        <p class="reel-card-desc">
+          I create responsive, modern websites using the latest technologies and best practices. From concept to deployment, I ensure your website looks great and performs perfectly.
+        </p>
+        <div class="reel-pill-tags">
+          <span>Responsive Design</span>
+          <span>Performance Optimized</span>
+          <span>SEO Friendly</span>
+        </div>
+      </div>
+
+      <!-- 2. Mobile Development -->
+      <div class="reel-service-card">
+        <div class="reel-icon-circle">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+        </div>
+        <h3 class="reel-card-title">Mobile Development</h3>
+        <p class="reel-card-desc">
+          Building cross-platform mobile applications that work seamlessly on both iOS and Android devices using modern frameworks and tools.
+        </p>
+        <div class="reel-pill-tags">
+          <span>Cross Platform</span>
+          <span>Native Performance</span>
+          <span>User-Friendly</span>
+        </div>
+      </div>
+
+      <!-- 3. UI/UX Design -->
+      <div class="reel-service-card">
+        <div class="reel-icon-circle">
+          <i class="fa-solid fa-palette"></i>
+        </div>
+        <h3 class="reel-card-title">UI/UX Design</h3>
+        <p class="reel-card-desc">
+          Designing intuitive and beautiful user interfaces that provide exceptional user experiences. I focus on usability, accessibility, and visual appeal.
+        </p>
+        <div class="reel-pill-tags">
+          <span>User-Centered</span>
+          <span>Modern Design</span>
+          <span>Accessibility</span>
+        </div>
+      </div>
+
+      <!-- 4. Performance Optimization -->
+      <div class="reel-service-card">
+        <div class="reel-icon-circle">
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+        <h3 class="reel-card-title">Performance Optimization</h3>
+        <p class="reel-card-desc">
+          Optimizing websites and applications for speed, scalability, and reliability. I ensure your digital products perform at their best under any conditions.
+        </p>
+        <div class="reel-pill-tags">
+          <span>Fast Loading</span>
+          <span>Scalable</span>
+          <span>Best Practice</span>
+        </div>
+      </div>
+
+      <!-- 5. E-commerce Solutions -->
+      <div class="reel-service-card">
+        <div class="reel-icon-circle">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <h3 class="reel-card-title">E-commerce Solutions</h3>
+        <p class="reel-card-desc">
+          Building secure and efficient e-commerce platforms that drive sales and provide excellent shopping experiences for your customers.
+        </p>
+        <div class="reel-pill-tags">
+          <span>Secure Payments</span>
+          <span>Inventory Management</span>
+          <span>Conversion Focus</span>
+        </div>
+      </div>
+
+      <!-- 6. API Development -->
+      <div class="reel-service-card">
+        <div class="reel-icon-circle">
+          <i class="fa-solid fa-gears"></i>
+        </div>
+        <h3 class="reel-card-title">API Development</h3>
+        <p class="reel-card-desc">
+          Creating robust and scalable APIs that power your applications. I build RESTful and GraphQL APIs with proper documentation and testing.
+        </p>
+        <div class="reel-pill-tags">
+          <span>RESTful APIs</span>
+          <span>GraphQL</span>
+          <span>Secure Endpoints</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ================= 6. PAGE 6: GET IN TOUCH (EXACT REEL MATCH) ================= -->
+  <section class="crimson-page-wrapper" id="contact">
+    <div class="reel-contact-container">
+      
+      <!-- Left Info Side -->
+      <div class="reel-contact-left">
+        <h2 class="reel-contact-heading">Get In Touch</h2>
+        <p class="reel-contact-sub">
+          Let's collaborate! I am always open to discussing exciting projects and new opportunities.
+        </p>
+
+        <div class="reel-contact-details">
+          <div class="reel-c-row">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:dy4991919@gmail.com">dy4991919@gmail.com</a>
+          </div>
+
+          <!-- DIRECT CLICK TO DIAL LINK -->
+          <div class="reel-c-row">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+919369578796" class="phone-dial-link">+91 9369578796</a>
+          </div>
+
+          <div class="reel-c-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Kanpur / Balrampur, India</span>
+          </div>
+        </div>
+
+        <div class="reel-contact-socials">
+          <a href="https://github.com/Rajydv011" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/raj-yadav-4729a2361" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://wa.me/919369578796" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Right Glass Card Form -->
+      <div class="reel-contact-right">
+        <!-- 100% LIVE REAL-TIME WORKING FORM -->
+        <form class="reel-form-box" id="contactForm" action="https://formsubmit.co/dy4991919@gmail.com" method="POST">
+          
+          <!-- Anti-Spam & Auto-Redirect Settings -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_subject" value="New Message from Durgesh Portfolio!">
+
+          <input type="text" name="name" placeholder="Your Name" required class="reel-input">
+          <input type="email" name="email" placeholder="Your Email" required class="reel-input">
+          <textarea name="message" placeholder="Your Message" rows="5" required class="reel-textarea"></textarea>
+          
+          <button type="submit" class="reel-btn-submit" id="submitBtn">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 3D RESUME / CV MODAL ================= -->
+  <div id="resumeModal" class="cv-modal-overlay" onclick="closeResumeModal(event)">
+    <div class="cv-3d-stage">
+      <div class="cv-paper-card" id="cvPaperCard" onclick="event.stopPropagation()">
+        <button type="button" class="cv-close-btn" onclick="closeResumeModal(event)">&times;</button>
+        <div class="cv-content-sheet">
+          <div class="cv-header">
+            <div>
+              <h1 class="cv-name">DURGESH YADAV</h1>
+              <p class="cv-role">Computer Science & Engineering Student</p>
+            </div>
+            <div class="cv-contacts">
+             < <p><i class="fa-solid fa-location-dot"></i> GANDHI CHOWK RAIPUR 492001 (C.G.)</p>
+              <p><i class="fa-solid fa-phone"></i> 9369578796</p>
+              <p><i class="fa-solid fa-envelope"></i> dy4991919@gmail.com</p>
+            </div>
+          </div>
+
+          <hr class="cv-line">
+
+          <div class="cv-block">
+            <h3 class="cv-sec-title">Career Objective</h3>
+            <p class="cv-desc">Want To Achieve High Career Growth With Continuous Learning And Attach With a Growth-Oriented Organization By Contributing My Skills. Looking forward to leveraging my technical and analytical skills in roles like Software Developer, Tech Support or Data Entry Operations.</p>
+          </div>
+
+          <div class="cv-block">
+            <h3 class="cv-sec-title">Educational Background</h3>
+            <table class="cv-table">
+              <thead>
+                <tr>
+                  <th>S.No.</th>
+                  <th>Course</th>
+                  <th>Board / University</th>
+                  <th>Year</th>
+                  <th>Percent / YGPA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>10<sup>th</sup></td>
+                  <td>UP Board</td>
+                  <td>2023</td>
+                  <td>86%</td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>12<sup>th</sup></td>
+                  <td>UP Board</td>
+                  <td>2025</td>
+                  <td>65.5%</td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>B.Tech (CSE)</td>
+                  <td>Maharana Pratap Engineering College, Kanpur</td>
+                  <td>2029 (Exp.)</td>
+                  <td>7 YGPA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="cv-grid-two">
+            <div class="cv-block">
+              <h3 class="cv-sec-title">Technical Skills</h3>
+              <ul class="cv-list">
+                <li><strong>Languages:</strong> C, C++</li>
+                <li><strong>Applications:</strong> MS Excel, MS Word, Data Entry</li>
+                <li><strong>Core:</strong> Basic Computer Knowledge, Troubleshooting</li>
+              </ul>
+            </div>
+            <div class="cv-block">
+              <h3 class="cv-sec-title">Strengths</h3>
+              <ul class="cv-list">
+                <li>Team Coordination & Communication</li>
+                <li>Strong Problem-Solving Abilities</li>
+                <li>Time Management & Administrative Operations</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cv-block">
+            <h3 class="cv-sec-title">Personal Details</h3>
+            <div class="cv-personal-row">
+              <div><span>Father's Name:</span> Mr. Rajman Yadav</div>
+              <div><span>Date of Birth:</span> 15/08/2005</div>
+              <div><span>Gender:</span> Male</div>
+              <div><span>Marital Status:</span> Unmarried</div>
+              <div><span>Languages:</span> Hindi & English</div>
+              <div><span>Nationality:</span> Indian</div>
+            </div>
+          </div>
+
+          <div class="cv-footer-dec">
+            <p>I hereby declare that the above information's are true to the best of my knowledge.</p>
+            <div class="cv-sign">
+              <span><strong>Place:</strong> RAIPUR</span>
+              <span><strong>(DURGESH YADAV)</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
   <script src="script.js"></script>
-  <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <button class="resume-nav-btn" onclick="openResumeModal()">
-            <i class="fa-solid fa-file-lines"></i> My Resume
-          </button>
-        </li>
-      </ul>
+  <!-- ================= FLOATING AI ASSISTANT CHATBOT ================= -->
+  <div class="ai-bot-widget" id="aiBotWidget">
+    
+    <!-- Floating Trigger Button -->
+    <button type="button" class="ai-bot-toggle-btn" id="aiBotToggle" onclick="toggleChatBot()" title="Chat with DY AI Assistant">
+      <div class="ai-btn-pulse"></div>
+      <i class="fa-solid fa-robot" id="botIcon"></i>
+      <span class="ai-btn-badge">AI</span>
+    </button>
+
+    <!-- Chat Box Window -->
+    <div class="ai-chat-window" id="aiChatWindow">
+      
+      <!-- Chat Header -->
+      <div class="ai-chat-header">
+        <div class="ai-header-left">
+          <div class="ai-avatar-online">
+            <i class="fa-solid fa-microchip"></i>
+            <span class="online-indicator"></span>
+          </div>
+          <div>
+            <h4 class="ai-bot-name">DY Assistant</h4>
+            <span class="ai-bot-status">Online • Ready to help</span>
+          </div>
+        </div>
+        <button type="button" class="ai-close-btn" onclick="toggleChatBot()">&times;</button>
+      </div>
+
+      <!-- Quick Questions Pills -->
+      <div class="ai-quick-prompts">
+        <button type="button" onclick="quickAsk('Who is Durgesh?')">Who is Durgesh?</button>
+        <button type="button" onclick="quickAsk('What are his skills?')">Skills</button>
+        <button type="button" onclick="quickAsk('Show projects')">Projects</button>
+        <button type="button" onclick="quickAsk('How to contact?')">Contact</button>
+      </div>
+
+      <!-- Messages Body -->
+      <div class="ai-chat-body" id="chatBody">
+        <div class="chat-msg bot-msg">
+          <p>Hi there! 👋 I am <strong>Durgesh's AI Assistant</strong>. Ask me anything about his skills, education, projects, or how to collaborate!</p>
+          <span class="msg-time">Just now</span>
+        </div>
+      </div>
+
+      <!-- Input Bar -->
+      <form class="ai-chat-input-bar" id="chatForm" onsubmit="handleChatSubmit(event)">
+        <input type="text" id="chatInput" placeholder="Ask about Durgesh..." autocomplete="off" required>
+        <button type="submit" class="ai-send-btn" id="chatSendBtn">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+
+    </div>
+  </div>
 </body>
 </html>
